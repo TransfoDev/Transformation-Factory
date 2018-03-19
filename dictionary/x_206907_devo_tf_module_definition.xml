@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" type="collection">
+        <element label="Approval Comments" max_length="4000" name="approval_comments" type="string"/>
+        <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
+        <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
+        <element label="Content" max_length="4000" name="content" type="html"/>
+        <element label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference"/>
+        <element label="Number of Available Places" max_length="40" name="number_of_available_places" type="integer"/>
+        <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element label="Schedule" max_length="40" name="schedule" type="glide_date_time"/>
+        <element label="Site" max_length="100" name="site" type="string"/>
+        <element label="Support" max_length="32" name="support" reference="kb_knowledge" type="reference"/>
+        <element choice="3" default="E-Learning" label="Training type" mandatory="true" max_length="40" name="training_type" type="string">
+            <choice>
+                <element label="On-Site" sequence="0" value="On-Site"/>
+                <element label="E-Learning" sequence="1" value="E-Learning"/>
+            </choice>
+        </element>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice/>
+        </element>
+    </element>
+</database>

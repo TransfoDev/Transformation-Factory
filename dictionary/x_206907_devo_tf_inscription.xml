@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Inscription" max_length="40" name="x_206907_devo_tf_inscription" type="collection">
+        <element label="Attendance" max_length="40" name="attendance" type="string"/>
+        <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
+        <element label="Content" max_length="4000" name="content" type="string"/>
+        <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>
+        <element label="Instance" max_length="32" name="instance" reference="x_206907_devo_tf_training_instance" type="reference"/>
+        <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
+        <element label="Sender" max_length="32" name="sender" reference="sys_user" type="reference"/>
+        <element label="Subject" max_length="100" name="subject" type="string"/>
+        <element label="Training" max_length="32" name="training" reference="x_206907_devo_tf_training_definition" type="reference"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+    </element>
+</database>

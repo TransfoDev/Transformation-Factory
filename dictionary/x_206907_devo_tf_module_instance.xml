@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Module Instance" max_length="40" name="x_206907_devo_tf_module_instance" type="collection">
+        <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
+        <element label="Completion Time" max_length="50" name="completion_time" type="string"/>
+        <element label="Content" max_length="3000" name="content" type="html"/>
+        <element label="Duration Resolution" max_length="70" name="duration_resolution" type="glide_duration"/>
+        <element label="End" max_length="40" name="end" type="glide_date_time"/>
+        <element label="From Training" max_length="32" name="from_training" reference="x_206907_devo_tf_training_instance" type="reference"/>
+        <element label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference"/>
+        <element label="Material" max_length="32" name="material" reference="kb_knowledge" type="reference"/>
+        <element label="Number of Available Places" max_length="40" name="number_of_available_places" type="integer"/>
+        <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element label="Personal Notes" max_length="1000" name="personal_notes" type="string"/>
+        <element label="Site" max_length="40" name="site" type="string"/>
+        <element label="Start" max_length="70" name="start" type="glide_date_time"/>
+        <element label="Subject" max_length="100" name="subject" type="string"/>
+        <element choice="3" default="E-Learning" label="Training Type" max_length="40" name="training_type" type="choice">
+            <choice>
+                <element label="E-Learning" value="E-Learning"/>
+                <element label="On-Site" value="On-Site"/>
+            </choice>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Training Instance" max_length="40" name="x_206907_devo_tf_training_instance" type="collection">
+        <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
+        <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
+        <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element default="0" label="Percent" max_length="15" name="percent" type="percent_complete"/>
+        <element label="Schedule - End" max_length="40" name="schedule_end" type="glide_date_time"/>
+        <element label="Schedule - Start" max_length="40" name="schedule_start" type="glide_date_time"/>
+        <element label="Subject" max_length="100" name="subject" type="string"/>
+        <element label="Summary" max_length="4000" name="summary" type="string"/>
+        <element choice="3" default="E-Learning" label="Training Type" max_length="40" name="training_type" type="choice">
+            <choice>
+                <element label="E-Learning" value="E-Learning"/>
+                <element label="Hybrid" value="Hybrid"/>
+                <element label="On-Site" value="On-Site"/>
+            </choice>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="training_type" table="x_206907_devo_tf_module_definition" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>training_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>On-Site</label>
+            <language>en</language>
+            <name>x_206907_devo_tf_module_definition</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-19 12:34:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1628d3bfdb701300ccc3771c8c961906</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-19 12:34:42</sys_updated_on>
+            <value>On-Site</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>training_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>E-Learning</label>
+            <language>en</language>
+            <name>x_206907_devo_tf_module_definition</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-19 12:34:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3558db3fdb701300ccc3771c8c961965</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-19 12:34:56</sys_updated_on>
+            <value>E-Learning</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>training_type</element>
+            <name>x_206907_devo_tf_module_definition</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-19 12:34:31</sys_created_on>
+            <sys_id>79589b3fdb701300ccc3771c8c961988</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>training_type</sys_name>
+            <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+            <sys_update_name>sys_choice_x_206907_devo_tf_module_definition_training_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-19 12:34:31</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

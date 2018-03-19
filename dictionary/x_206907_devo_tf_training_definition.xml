@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" type="collection">
+        <element label="Approval Comments" max_length="400" name="approval_comments" type="string"/>
+        <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
+        <element label="End Validation Date" max_length="40" name="end_validation_date" type="glide_date_time"/>
+        <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element label="Publication Date" max_length="40" name="publication_date" read_only="true" type="glide_date_time"/>
+        <element label="Schedule - End" max_length="40" name="schedule_end" type="glide_date_time"/>
+        <element label="Schedule - Start" max_length="40" name="schedule_start" type="glide_date_time"/>
+        <element label="Summary" max_length="4000" name="summary" type="string"/>
+        <element choice="1" label="Training Type" max_length="40" name="training_type" type="choice">
+            <choice>
+                <element label="E-Learning" value="E-Learning"/>
+                <element label="Hybrid" value="Hybrid"/>
+                <element label="On-Site" value="On-Site"/>
+            </choice>
+        </element>
+        <element label="Workflow State" max_length="80" name="workflow_state" type="workflow"/>
+    </element>
+</database>
