@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-03-19 16:02:16</sys_created_on>
+        <sys_id>0de70448dbc11300ccc3771c8c9619a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_206907_devo_tf_tf_project.x_206907_devo_tf.tf_project_user</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_security_acl display_value="x_206907_devo_tf_tf_project">c1e70448dbc11300ccc3771c8c9619a5</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_0de70448dbc11300ccc3771c8c9619a7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-03-19 16:02:16</sys_updated_on>
+        <sys_user_role display_value="x_206907_devo_tf.tf_project_user" name="x_206907_devo_tf.tf_project_user">78e70c44dbc11300ccc3771c8c9619fa</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

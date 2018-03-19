@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="M2m Module Def Training Def" max_length="40" name="x_206907_devo_tf_m2m_module_def_training_def" type="collection">
+        <element label="Module Definition" max_length="32" name="module_definition" reference="x_206907_devo_tf_module_definition" type="reference"/>
+        <element label="Training Definition" max_length="32" name="training_definition" reference="x_206907_devo_tf_training_definition" type="reference"/>
+        <index name="index">
+            <element name="training_definition"/>
+        </index>
+        <index name="index2">
+            <element name="module_definition"/>
+        </index>
+    </element>
+</database>

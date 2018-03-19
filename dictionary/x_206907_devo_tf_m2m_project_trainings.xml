@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="M2m Project Trainings" max_length="40" name="x_206907_devo_tf_m2m_project_trainings" type="collection">
+        <element label="Project" max_length="32" name="project" reference="x_206907_devo_tf_tf_project" type="reference"/>
+        <element label="Training" max_length="32" name="training" reference="x_206907_devo_tf_training_definition" type="reference"/>
+        <index name="index">
+            <element name="project"/>
+        </index>
+        <index name="index2">
+            <element name="training"/>
+        </index>
+    </element>
+</database>

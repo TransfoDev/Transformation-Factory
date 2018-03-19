@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="module_instance" label="Module Instance" language="en" table="x_206907_devo_tf_tf_m2m_instances_training_modules">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>module_instance</element>
+            <help/>
+            <hint/>
+            <label>Module Instance</label>
+            <language>en</language>
+            <name>x_206907_devo_tf_tf_m2m_instances_training_modules</name>
+            <plural>Module Instances</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-19 16:13:47</sys_created_on>
+            <sys_id>358a84c8dbc11300ccc3771c8c9619db</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Module Instance</sys_name>
+            <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+            <sys_update_name>sys_documentation_x_206907_devo_tf_tf_m2m_instances_training_modules_module_instance_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-19 16:13:47</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
