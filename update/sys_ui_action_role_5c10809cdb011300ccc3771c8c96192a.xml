@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-03-20 10:06:42</sys_created_on>
+        <sys_id>5c10809cdb011300ccc3771c8c96192a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Review Module.x_206907_devo_tf.tf_approver</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_ui_action display_value="Review Module">d700089cdb011300ccc3771c8c9619e9</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_5c10809cdb011300ccc3771c8c96192a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-03-20 10:06:42</sys_updated_on>
+        <sys_user_role display_value="x_206907_devo_tf.tf_approver" name="x_206907_devo_tf.tf_approver">1bdf048cdbc11300ccc3771c8c96193e</sys_user_role>
+    </sys_ui_action_role>
+</record_update>
