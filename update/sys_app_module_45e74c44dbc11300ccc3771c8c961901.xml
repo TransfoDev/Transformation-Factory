@@ -2,7 +2,7 @@
 <record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="Transformation Factory">369afa7fdb301300ccc3771c8c9619ed</application>
+        <application/>
         <assessment/>
         <content_page/>
         <device_type/>

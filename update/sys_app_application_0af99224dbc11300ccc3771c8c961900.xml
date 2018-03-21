@@ -6,25 +6,25 @@
         <description/>
         <device_type>browser</device_type>
         <hint/>
-        <name>Transformation Factory</name>
+        <name/>
         <order>100</order>
-        <roles>x_206907_devo_tf.training_definition_user</roles>
+        <roles>x_206907_devo_tf.tf_communication_resp</roles>
         <sys_class_name>sys_app_application</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-03-19 10:24:36</sys_created_on>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-03-21 15:58:43</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>369afa7fdb301300ccc3771c8c9619ed</sys_id>
+        <sys_id>0af99224dbc11300ccc3771c8c961900</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Transformation Factory</sys_name>
+        <sys_name>Events</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
-        <sys_update_name>sys_app_application_369afa7fdb301300ccc3771c8c9619ed</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-19 10:24:36</sys_updated_on>
-        <title>Transformation Factory</title>
+        <sys_update_name>sys_app_application_0af99224dbc11300ccc3771c8c961900</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-21 15:58:43</sys_updated_on>
+        <title>Events</title>
         <view_name/>
     </sys_app_application>
 </record_update>

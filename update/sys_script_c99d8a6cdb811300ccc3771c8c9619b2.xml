@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_206907_devo_tf_events_registrations</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>TF - Create Invitation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	//We first need to get the Guests List, either from the list of users or from the of groups
+	var userList = current.guest_list;
+	var groupList = current.group_list;
+
+	//We then Store these lists in arrays
+	var groupTab = groupList.split(',');
+	var guestTab = userList.split(',');
+
+	//Because we can invite more than one group, we roll the group list and extract each users, they are then added in the guestTab array
+	for (var j = 0; j<groupTab.length; j++){
+
+		var userGrp = new GlideRecord('sys_user_grmember');
+		userGrp.addQuery('group',groupTab[j]);
+		userGrp.query();
+
+		while (userGrp.next()){
+			guestTab.push(userGrp.user.getValue("sys_id"));
+		}
+	}
+	//We skip every duplicate from the Array
+	var arrayUtil = new ArrayUtil();
+	var guestsList = arrayUtil.unique(guestTab);
+
+	//We check if the array does not contain null rows to prevent void invitations
+	var nullIndex = guestsList.indexOf('');
+	if(nullIndex != '-1'){
+		guestsList.splice(guestsList.indexOf(''),1);
+	}
+
+
+
+	//We go through the array, check the event disponibility, check if the user has not already been invited and then, we create invitations linked to the event
+	for(var i = 0 ; i<guestsList.length; i++){
+
+
+		//We check if an invitation linked to our event has already been created for our guest, if so, we skip to the next one 
+		var testedUser = new GlideRecord('sys_user');
+		testedUser.get(guestsList[i]);
+
+		var testInvitation = new GlideRecord('x_206907_devo_tf_invitations');
+		testInvitation.addQuery("assigned_to", guestsList[i]);
+		testInvitation.addQuery("parent", current.event);
+		testInvitation.query();
+
+		if (testInvitation.hasNext()) {
+			gs.addErrorMessage("This user : " + testedUser.name  + " is already enrolled for this Event : " + current.event.getDisplayValue());
+			continue;
+		}
+
+		//We then Check if the event is not at maximum capacity.
+		//If our guests list contains too much users, only the first ones will be added (alphabetical order)
+		var gr2 = new GlideRecord("x_206907_devo_tf_events_list");
+		gr2.addQuery('sys_id', current.event.sys_id);
+		gr2.query();
+		while(gr2.next()){
+			if (gr2.invitations >= gr2.capacity){
+				gs.addErrorMessage("The user " + testedUser.name +" was not invited to the event : " + gr2.short_description + ". The event is currently at full occupancy.");
+				continue;
+			}
+
+			//If all our verifications return valid, we can create the invitation
+			else{
+				var gr = new GlideRecord("x_206907_devo_tf_invitations");
+				gr.initialize();
+				gr.assigned_to = guestsList[i];
+				gr.parent = current.event;
+				gr.location = current.event.location;
+				gr.start = current.event.start;
+				gr.end = current.event.end;
+				gr.short_description = current.event.short_description;
+				gr.description = current.event.description;
+				gr.registration = current.sys_id;
+
+				var invitation = gr.insert();
+				current.invitation = invitation;
+
+				gr2.invitations = gr2.invitations + 1;	
+				gr2.update();
+
+				gs.addInfoMessage("The user " + testedUser.name +" has been invited to the event : " + gr2.short_description + ".");
+			}
+		}
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-03-21 15:16:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c99d8a6cdb811300ccc3771c8c9619b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TF - Create Invitation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_script_c99d8a6cdb811300ccc3771c8c9619b2</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-21 15:16:57</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=c99d8a6cdb811300ccc3771c8c9619b2"/>
+</record_update>
