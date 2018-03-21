@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="attendance" table="x_206907_devo_tf_inscription" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>attendance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Present</label>
+            <language>en</language>
+            <name>x_206907_devo_tf_inscription</name>
+            <sequence>10</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-20 16:23:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e5469d98dbc11300ccc3771c8c9619ed</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-20 16:24:32</sys_updated_on>
+            <value>present</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>attendance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Absent</label>
+            <language>en</language>
+            <name>x_206907_devo_tf_inscription</name>
+            <sequence>20</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-20 16:23:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>41369d98dbc11300ccc3771c8c9619fa</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-20 16:23:26</sys_updated_on>
+            <value>absent</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>attendance</element>
+            <name>x_206907_devo_tf_inscription</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-03-20 16:23:11</sys_created_on>
+            <sys_id>5146dd98dbc11300ccc3771c8c961920</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>attendance</sys_name>
+            <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+            <sys_update_name>sys_choice_x_206907_devo_tf_inscription_attendance</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-03-20 16:23:11</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

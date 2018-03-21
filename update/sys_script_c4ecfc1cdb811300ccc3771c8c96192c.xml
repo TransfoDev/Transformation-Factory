@@ -29,11 +29,11 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	if(current.training.formation_type != "On-site") return;
+	if(current.training.training_type != "On-site") return;
 	if(current.attendance.changesTo("present") || current.attendance.changesTo("absent")){
 
 		var gr = new GlideRecord("x_206907_devo_tf_training_instance");
-		gr.get(current.instance);
+		gr.addQuery("sys_id",current.instance);
 		gr.state = 3;
 		gr.update();
 
@@ -47,7 +47,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c4ecfc1cdb811300ccc3771c8c96192c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>TF_Close_On_Site_Instance_On_Attendance</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -55,7 +55,7 @@
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_c4ecfc1cdb811300ccc3771c8c96192c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-20 14:32:14</sys_updated_on>
+        <sys_updated_on>2018-03-20 16:49:41</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

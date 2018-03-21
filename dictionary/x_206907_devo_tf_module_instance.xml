@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Module Instance" max_length="40" name="x_206907_devo_tf_module_instance" type="collection">
+    <element extends="task" label="Module Instance" max_length="40" name="x_206907_devo_tf_module_instance" sizeclass="3" type="collection">
         <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
         <element label="Completion Time" max_length="50" name="completion_time" type="string"/>
         <element label="Content" max_length="3000" name="content" type="html"/>

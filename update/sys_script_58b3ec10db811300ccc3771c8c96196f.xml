@@ -47,10 +47,10 @@
 
 	var training = new GlideRecord('x_206907_devo_tf_training_instance');
 	training.get(current.from_training);
-	gs.log('counttotal '     + counttotal,'CHC');
-	gs.log('countcompleted ' + countcompleted,'CHC');
-	gs.log((countcompleted/counttotal)*100,'CHC');
-    training.u_percent = (countcompleted/counttotal)*100;  
+	gs.info('counttotal '     + counttotal,'CHC');
+	gs.info('countcompleted ' + countcompleted,'CHC');
+	gs.info((countcompleted/counttotal)*100,'CHC');
+    training.percent = (countcompleted/counttotal)*100;  
 	
 	if (training.percent ==100){
 		training.state = 3;
@@ -64,7 +64,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>58b3ec10db811300ccc3771c8c96196f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>TF - Calcul Percent</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -72,7 +72,7 @@
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_58b3ec10db811300ccc3771c8c96196f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-20 12:42:12</sys_updated_on>
+        <sys_updated_on>2018-03-20 16:41:51</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

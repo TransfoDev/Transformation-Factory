@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" type="collection">
+    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" sizeclass="2" type="collection">
         <element label="Approval Comments" max_length="4000" name="approval_comments" type="string"/>
         <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
         <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
