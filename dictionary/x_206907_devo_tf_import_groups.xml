@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="sys_import_set_row" label="TF_Import_Groups" max_length="40" name="x_206907_devo_tf_import_groups" type="collection">
+        <element attributes="import_attribute_name=Active,edge_encryption_enabled=true" label="Active" max_length="40" name="u_active" type="string"/>
+        <element attributes="import_attribute_name=Created" label="Created" max_length="40" name="u_created" type="glide_date_time"/>
+        <element attributes="import_attribute_name=Created by,edge_encryption_enabled=true" label="Created by" max_length="40" name="u_created_by" type="string"/>
+        <element attributes="import_attribute_name=Description,edge_encryption_enabled=true" label="Description" max_length="57" name="u_description" type="string"/>
+        <element attributes="import_attribute_name=Manager,edge_encryption_enabled=true" label="Manager" max_length="40" name="u_manager" type="string"/>
+        <element attributes="import_attribute_name=Name,edge_encryption_enabled=true" label="Name" max_length="40" name="u_name" type="string"/>
+        <element attributes="import_attribute_name=Parent,edge_encryption_enabled=true" label="Parent" max_length="40" name="u_parent" type="string"/>
+        <element attributes="import_attribute_name=Updated" label="Updated" max_length="40" name="u_updated" type="glide_date_time"/>
+    </element>
+</database>

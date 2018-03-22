@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.list-group-item {
+  padding: 5px;
+  border: none;
+}
+
+.summary {
+ 	font-weight: bold; 
+}
+
+.panel{
+	margin:1%;
+  margin-left:4.15%;
+  margin-right:4.15%;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tf-training-definitions</id>
+        <internal>false</internal>
+        <link/>
+        <name>TF - Training Definitions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.articles = [];
+	var user = gs.getUserID();
+	var z =new GlideRecord('u_training_definition');
+	z.addQuery("state", 4);//state is published
+	//z.setLimit(options.max_number || 5);
+	z.query();
+	while (z.next()) {
+		var a = {};
+		$sp.getRecordValues(a, z, 'short_description,sys_id,u_formation_type,number,u_summary');
+		if(z.u_schedule)
+		a.u_schedule = z.u_schedule.getGlideObject().getLocalDate().getDisplayValue();
+		if(z.u_schedule_end)
+		a.u_schedule_end = z.u_schedule_end.getGlideObject().getLocalDate().getDisplayValue();
+		if(z.u_end_validation_date)
+		a.u_end_validation_date = z.u_end_validation_date.getGlideObject().getLocalDate().getDisplayValue();
+		a.u_owner = z.u_owner.getDisplayValue();
+		a.u_author = z.u_author.getDisplayValue();
+		data.articles.push(a);
+	}
+})()
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-03-22 15:27:58</sys_created_on>
+        <sys_id>40dcd3bcdbc11300ccc3771c8c961920</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>TF - Training Definitions</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_widget_40dcd3bcdbc11300ccc3771c8c961920</sys_update_name>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-03-22 15:28:31</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{options.color}} b col-md-5" ng-if="(data.articles.length > 0)"  ng-repeat="a in data.articles">
+  <div class="panel-heading"> 
+    <h2 class="h4 panel-title">
+    <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
+    <span>{{::a.number}} - {{a.short_description}}</span>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <div class="list-group-item">
+        <div ng-if="a.u_summary" class="summary">
+          <span class="col-md-6">${Summary} : </span><span class="col-md-6">{{a.u_summary}}</span>
+        </div>
+        &nbsp;
+        <div ng-if="a.u_formation_type">
+          <span class="col-md-6">${Training Type} : </span><span class="col-md-6">{{a.u_formation_type}}</span>
+        </div>
+        <div ng-if="a.u_schedule">
+         <span class="col-md-6">${Starting} : </span><span class="col-md-6">{{a.u_schedule}}</span>
+        </div>
+        <div ng-if="a.u_schedule_end">
+          <span class="col-md-6">${Ending} : </span><span class="col-md-6">{{a.u_schedule_end}}</span>
+        </div>
+        <div ng-if="a.u_owner">
+          <span class="col-md-6">${Owner} : </span><span class="col-md-6">{{a.u_owner}}</span>
+        </div>
+        <div ng-if="a.u_author">
+          <span class="col-md-6">${Author} : </span><span class="col-md-6">{{a.u_author}}</span>
+        </div>
+        <div ng-if="a.u_end_validation_date">
+          <span class="col-md-6">${Valid until} : </span><span class="col-md-6">{{a.u_end_validation_date}}</span>
+        </div>
+        <br/>
+        &nbsp;&nbsp;
+        <div>
+          <span><a href="?id=tf_modules&sys_id={{a.sys_id}}" class="btn btn-{{options.color}} m-b">${View Modules}</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

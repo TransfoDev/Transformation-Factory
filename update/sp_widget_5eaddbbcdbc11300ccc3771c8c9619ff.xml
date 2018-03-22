@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tf-module-instances</id>
+        <internal>false</internal>
+        <link/>
+        <name>TF - Module Instances</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-03-22 15:31:41</sys_created_on>
+        <sys_id>5eaddbbcdbc11300ccc3771c8c9619ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TF - Module Instances</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_widget_5eaddbbcdbc11300ccc3771c8c9619ff</sys_update_name>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-03-22 15:31:41</sys_updated_on>
+        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+    </sp_widget>
+</record_update>

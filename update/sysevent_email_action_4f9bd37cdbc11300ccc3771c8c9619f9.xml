@@ -2,13 +2,13 @@
 <record_update sys_domain="global" table="sysevent_email_action">
     <sysevent_email_action action="INSERT_OR_UPDATE">
         <action_insert>false</action_insert>
-        <action_update>true</action_update>
+        <action_update>false</action_update>
         <active>true</active>
         <advanced_condition/>
         <affected_field_on_event/>
         <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
         <collection>x_206907_devo_tf_training_definition</collection>
-        <condition table="x_206907_devo_tf_training_definition">stateCHANGESTO3^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3"/>
+        <condition table="x_206907_devo_tf_training_definition">state=2^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="2"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
         <content_type>text/html</content_type>
@@ -38,45 +38,44 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello, ${author}</p>
-<p>Your training has been approved,</p>
-<p>Training Title: ${short_description}</p>
-<p>Description: ${description}</p>
-<p>Approval comments :&nbsp; ${approval_comments}</p>
-<p>Your training information is available to you on Service Portal:&nbsp;${mail_script:TF_training_def}</p>
+        <message_html><![CDATA[<p>&nbsp;</p>
+<p>Hello, Author: ${author}<br /><br /></p>
+<p>Training&nbsp; ${short_description} is waiting for approval</p>
+<p>Instructor: ${u_instructor}</p>
+<p>Your training information is available to you on Service Portal: ${mail_script:TF_training_def}</p>
 <p>Best Regards,</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>TF - Training approved</name>
+        <name>TF - Training waiting for approval</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
-        <recipient_fields>author</recipient_fields>
+        <recipient_fields>owner</recipient_fields>
         <recipient_groups/>
         <recipient_users/>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Your training : ${short_description}  has been approved</subject>
+        <subject/>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>anoufel</sys_created_by>
-        <sys_created_on>2018-03-21 15:41:09</sys_created_on>
+        <sys_created_on>2018-03-22 15:27:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>42745660dbc11300ccc3771c8c9619ae</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>TF - Training approved</sys_name>
+        <sys_id>4f9bd37cdbc11300ccc3771c8c9619f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TF - Training waiting for approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
-        <sys_update_name>sysevent_email_action_42745660dbc11300ccc3771c8c9619ae</sys_update_name>
+        <sys_update_name>sysevent_email_action_4f9bd37cdbc11300ccc3771c8c9619f9</sys_update_name>
         <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-03-22 10:29:44</sys_updated_on>
+        <sys_updated_on>2018-03-22 15:27:28</sys_updated_on>
         <sys_version>2</sys_version>
-        <template/>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>
