@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,spUtil,$sce,$rootScope) {
+	var c = this;
+
+	//update breadcrumbs
+	$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
+	//permit content to be rendered in html
+	$scope.data.u_content = $sce.trustAsHtml($scope.data.u_content);
+
+	//fill in notes field with previous input
+	$scope.notes = $scope.data.u_personal_notes;
+
+	//sends event to server that module is started or completed
+	c.nextState = function(action){
+		c.data.action = action;
+		c.server.update().then(function() {
+			c.data.action = undefined;
+			spUtil.update($scope);
+			$scope.data.u_content = $sce.trustAsHtml($scope.data.u_content);
+		})
+	}	
+	c.saveNotes = function(action){
+		c.data.action = action;
+		c.data.notes = $scope.notes;
+		c.server.update().then(function() {
+			c.data.action = undefined;
+			spUtil.update($scope);
+		})
+	}	
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.list-group-item {
+  padding: 5px;
+  border: none;
+}
+
+.summary {
+	font-weight: bold;
+}
+
+.notes{
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100px;
+  min-width: 100px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  vertical-align: top;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my-module-details</id>
+        <internal>false</internal>
+        <link/>
+        <name>My module details</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.action = "";
+	var tf_module = $sp.getParameter('sys_id');
+	var z = new GlideRecord('u_module_instance');
+	z.get(tf_module);
+	var user = gs.getUserID();
+	//var a = {};
+	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,u_content,u_number_of_available_places,u_personal_notes');
+	data.status = z.state.getValue();
+	$sp.getRecordDisplayValues(data, z, 'u_instructor,u_formation_type');
+	data.state = z.state.getDisplayValue();
+	data.title = z.short_description.getValue();
+	data.u_support = z.u_support.getDisplayValue();
+	data.u_supportlink = z.u_support.getValue();
+	data.u_supporttitle =  z.u_support.short_description.getValue();
+	if(z.u_schedule)
+		data.u_schedule = z.u_schedule.getGlideObject().getLocalDate().getDisplayValue();
+	if(z.u_start){
+		data.u_start = z.u_start.getGlideObject().getLocalDate().getDisplayValue();
+		var startTime = z.u_start.getValue();
+		var sTimeArray = startTime.split(' ');
+		data.u_start_time = sTimeArray[1];
+	}
+	if(z.u_end){
+		data.u_end = z.u_end.getGlideObject().getLocalDate().getDisplayValue();
+		var endTime = z.u_end.getValue();
+		var sEndTimeArray = endTime.split(' ');
+		data.u_end_time = sEndTimeArray[1];
+	}
+	data.duration = z.u_duration_resolution.getDisplayValue();
+	//Breadcrumbs
+	var rec = z.u_from_training.getRefRecord();	
+	data.breadcrumbs = [{label: data.title, url: '#'}];
+	data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=tf_modins&sys_id=' + rec.getUniqueValue()});
+	data.allmyti = gs.getMessage("All My Trainings");
+	data.breadcrumbs.unshift({label: data.allmyti, url: '?id=tf_allmyti'});
+
+
+	if (!input){
+		return;
+	}
+	else if (input.action){
+		if (input.action == 'start' || input.action == 'complete'){
+			z.state +=1 ;
+		data.state = z.state.getDisplayValue();}
+		// KAS : personal notes input
+		else if (input.action == 'saveNotes'){
+			z.u_personal_notes = input.notes;
+		}
+		
+		z.update();
+	}
+})()
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-03-22 15:38:51</sys_created_on>
+        <sys_id>574f1330db051300ccc3771c8c961951</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>My module details</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_widget_574f1330db051300ccc3771c8c961951</sys_update_name>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-03-22 15:39:46</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{options.color}}">
+  <div class="panel-heading"> 
+    <h2 class="h4 panel-title">
+      <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
+      <span>${Module} - {{::data.number}} - {{::data.short_description}}</span>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <div class="list-group-item">
+        <div ng-if="data.u_schedule" class="summary">
+          <span class="col-lg-3">${Schedule : }</span><span class="col-lg-9">{{data.u_schedule}}</span>
+        </div>
+        &nbsp;
+        <div ng-if="data.status==1 && data.u_formation_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('start')">${Start Module}</div>   
+        <div ng-if="data.status==2 && data.u_formation_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('complete')">${Complete Module}</div>  
+        &nbsp;
+        <div ng-if="data.description" class="summary">
+          <span class="col-lg-3">${Description} : </span>
+          <span class="col-lg-9" >{{data.description}}</span>
+        </div>
+        &nbsp;
+        <div ng-if="data.state" class="summary">
+          <span class="col-lg-3">${State} : </span>
+          <span class="col-lg-9" >{{data.state}}</span>
+        </div>
+        <div ng-if="data.u_start" class="summary">
+          <span class="col-lg-3">${Started} : </span>
+          <span class="col-lg-9" >{{data.u_start}} ${at} {{data.u_start_time}}</span>
+        </div>
+        <div ng-if="data.u_end" class="summary">
+          <span class="col-lg-3">${Ended} : </span>
+          <span class="col-lg-9" >{{data.u_end}} ${at} {{data.u_end_time}}</span>
+        </div>
+        <div ng-if="data.duration !== 'undefined' && data.u_end" class="summary">
+          <span class="col-lg-3">${Duration} : </span>
+          <span class="col-lg-9" >{{data.duration}}</span>
+        </div>
+        &nbsp;
+        <div ng-if="data.u_support" class="summary">
+          <span class="col-lg-3">${Material} : </span>
+          <a href="?id=kb_article&sys_id={{::data.u_supportlink}}">
+            <span class="col-lg-9">{{data.u_support}} - {{data.u_supporttitle}}</span>
+          </a>
+        </div>
+        <div ng-show="data.u_content && data.status >= 2">
+          <hr/>
+          &nbsp;
+          <div ng-bind-html="data.u_content" style="overflow-x:auto;">
+          </div>
+        </div>  
+        &nbsp;
+        <div>
+          <hr/>
+          <form>
+            <label>
+              ${Personal Notes} :
+              <input id="my_notes" type="text" name="notes" ng-model="notes" ng-minlength="3" ng-maxlength="1000" size="1000" class="notes">
+            </label>
+          </form>
+          &nbsp;
+          <div class="btn btn-success m-b" ng-click="c.saveNotes('saveNotes')">${Save Notes}</div>
+        </div><!-- end input-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--<pre>{{data|json}}</pre>-->
+<!--<pre>{{data.u_content|html}}</pre>-->]]></template>
+    </sp_widget>
+</record_update>

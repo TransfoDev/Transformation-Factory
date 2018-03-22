@@ -2,9 +2,24 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <client_script><![CDATA[function($sce) {
+  /* widget controller */
+  var c = this;
+		
+	//update breadcrumbs
+	$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
+	
+	c.data.u_content = $sce.trustAsHtml(c.data.u_content);
+}]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.list-group-item {
+  padding: 5px;
+  border: none;
+}
+
+.summary {
+	font-weight: bold;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -18,20 +33,90 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+	var tf_module = $sp.getParameter('sys_id');
+	var z = new GlideRecord('u_module_definition');
+	z.get(tf_module);
+	var user = gs.getUserID();
+	//var a = {};
+	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,u_formation_type,u_content,u_number_of_available_places,u_completion_time,u_site,u_number_of_available_places');
+	$sp.getRecordDisplayValues(data, z, 'u_instructor');
+	if(z.u_schedule)
+		data.u_schedule = z.u_schedule.getGlideObject().getLocalDate().getDisplayValue();
+	data.u_support = z.u_support.getDisplayValue();
+	data.u_supportlink = z.u_support.getValue();
+	data.u_supporttitle =  z.u_support.short_description.getValue();
+
+	data.title = z.short_description.getValue();
+
+	//Breadcrumbs
+	//var rec = z.u_from_training.getRefRecord();	
+	data.breadcrumbs = [{label: data.title, url: '#'}];
+	//data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=tf_modules&sys_id=' + rec.getUniqueValue()});
+	data.allti = gs.getMessage("All Trainings");
+	data.breadcrumbs.unshift({label: data.allti, url: '?id=tf_trainings'});
+})()
+
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:32:46</sys_created_on>
         <sys_id>9eedd7bcdbc11300ccc3771c8c961949</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Module Details</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_9eedd7bcdbc11300ccc3771c8c961949</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-22 15:35:58</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2018-03-22 15:37:52</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{options.color}}">
+  <div class="panel-heading"> 
+    <h2 class="h4 panel-title">
+    <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
+    <span>${Module} - {{data.short_description}}</span>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <div class="list-group-item">
+        <div ng-if="data.u_schedule" class="summary">
+          <span class="col-lg-3">${Schedule : }</span><span class="col-lg-9">{{data.u_schedule}}</span>
+        </div>
+         <div ng-if="data.u_completion_time" class="summary">
+          <span class="col-lg-3">${Completion Time : }</span><span class="col-lg-9">{{data.u_completion_time}}</span>
+        </div>
+        <div ng-if="data.u_site" class="summary">
+          <span class="col-lg-3">${Site : }</span><span class="col-lg-9">{{data.u_site}}</span>
+        </div>
+        <div ng-if="data.u_number_of_available_places" class="summary">
+          <span class="col-lg-3">${Number of available places: }</span><span class="col-lg-9">{{data.u_number_of_available_places}}</span>
+        </div>
+        <div ng-if="data.u_instructor" class="summary">
+          <span class="col-lg-3">${Instructor : }</span><span class="col-lg-9">{{data.u_instructor}}</span>
+        </div>
+        <div ng-if="data.description" class="summary">
+          <span class="col-lg-3">${Description : }</span><span class="col-lg-9">{{data.description}}</span>
+        </div>
+         <div ng-if="data.u_support" class="summary">
+          <span class="col-lg-3">${Material} : </span>
+          <a href="?id=kb_article&sys_id={{::data.u_supportlink}}">
+            <span class="col-lg-9">{{data.u_support}} - {{data.u_supporttitle}}</span>
+           </a>
+         </div>
+         <br/>
+          &nbsp;
+        <div ng-if="data.u_content">
+          <span class="summary col-lg-3">${Content} :</span>
+          <br/>
+          &nbsp;
+          <div ng-bind-html="data.u_content" style="overflow-x:auto;"></div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
