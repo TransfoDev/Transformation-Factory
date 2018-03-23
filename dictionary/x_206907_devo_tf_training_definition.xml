@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="1" type="collection">
+    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="3" type="collection">
         <element label="Approval Comments" max_length="400" name="approval_comments" type="string"/>
         <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
         <element label="End Validation Date" max_length="40" name="end_validation_date" type="glide_date_time"/>
