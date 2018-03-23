@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Events Registrations" max_length="40" name="x_206907_devo_tf_events_registrations" type="collection">
+    <element extends="task" label="Events Registrations" max_length="40" name="x_206907_devo_tf_events_registrations" sizeclass="1" type="collection">
         <element label="Event" mandatory="true" max_length="32" name="event" reference="x_206907_devo_tf_events_list" type="reference"/>
         <element label="Event Capacity" max_length="40" name="event_capacity" type="integer"/>
         <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>

@@ -51,10 +51,10 @@ a {
 	data.articles = [];
 	data.widgetTitle = options.title || gs.getMessage("My Trainings");
 	var user = gs.getUserID();
-	var z =new GlideRecord('u_training_instance');
+	var z =new GlideRecord('x_206907_devo_tf_training_instance');
 	z.addQuery("assigned_to", user);
-	z.addQuery("u_state",'!=',0);//Removing Cancelled
-	z.addQuery("u_state",'!=',3);//Removing Completed
+	z.addQuery("state",'!=',0);//Removing Cancelled
+	z.addQuery("state",'!=',3);//Removing Completed
 	//z.setLimit(options.max_number || 5);
 	z.query();
 	data.totalTrainingCount = z.getRowCount();
@@ -62,12 +62,12 @@ a {
 	var today = new GlideDateTime();
 	while (z.next() && count < options.max_number) {
 		var a = {};
-		$sp.getRecordValues(a, z, 'short_description,sys_id,u_percent,u_schedule');
-		$sp.getRecordDisplayValues(a, z, 'u_formation_type');
-		if (z.u_schedule){
-			a.u_scheduled_date = z.u_schedule.getGlideObject().getLocalDate().getDisplayValue();
-			if (a.u_schedule > today) a.time = "future";
-			else if (a.u_schedule <= today) a.time = "past";
+		$sp.getRecordValues(a, z, 'short_description,sys_id,percent,schedule');
+		$sp.getRecordDisplayValues(a, z, 'formation_type');
+		if (z.schedule){
+			a.scheduled_date = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+			if (a.schedule > today) a.time = "future";
+			else if (a.schedule <= today) a.time = "past";
 			//else a.time = "undefined";
 		}
 		else a.time = "undefined";
@@ -76,9 +76,9 @@ a {
 	}
 
 	//count completed trainings
-	var y =new GlideAggregate('u_training_instance');
+	var y =new GlideAggregate('x_206907_devo_tf_training_instance');
 	y.addQuery("assigned_to", user);
-	y.addQuery("u_state",3);//Selecting Completed
+	y.addQuery("state",3);//Selecting Completed
 	y.query();
 	if (y.next())
 		data.completedCount = y.getAggregate('COUNT');
@@ -90,14 +90,14 @@ a {
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:26:16</sys_created_on>
         <sys_id>4f6c1b7cdbc11300ccc3771c8c9619d2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>My Trainings</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_4f6c1b7cdbc11300ccc3771c8c9619d2</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-22 15:27:11</sys_updated_on>
+        <sys_updated_on>2018-03-23 15:24:43</sys_updated_on>
         <template><![CDATA[<div class="panel panel-{{::c.options.color}} b">
   <div class="panel-heading">
     <h4 class="panel-title">{{::data.widgetTitle}}</h4>
@@ -106,14 +106,14 @@ a {
     <div class="list-group-item" ng-repeat="a in data.articles">
       <a href="?id=tf_modins&sys_id={{::a.sys_id}}">{{a.short_description}}</a>          
       <div class="progress-bar">
-        <div class="progress-bar-inner" ng-style="{width: a.u_percent + '%'}"></div>
+        <div class="progress-bar-inner" ng-style="{width: a.percent + '%'}"></div>
       </div><!--End progress bar-->      
-      <div class="align" title="{{a.u_schedule.display_value}}">
+      <div class="align" title="{{a.schedule.display_value}}">
         <small>
-          <span ng-if="a.time == 'past'">${Started} : <sn-time-ago timestamp="a.u_schedule" /></span>
-          <span ng-if="a.time == 'future'">${Planned for the} : {{a.u_scheduled_date}}</span>
+          <span ng-if="a.time == 'past'">${Started} : <sn-time-ago timestamp="a.schedule" /></span>
+          <span ng-if="a.time == 'future'">${Planned for the} : {{a.scheduled_date}}</span>
           <span ng-if="a.time == 'undefined'">${Not scheduled}</span>
-          <span class="pull-right">{{a.u_formation_type}}</span>
+          <span class="pull-right">{{a.formation_type}}</span>
         </small>          
       </div><!--End schedule-->   
     </div><!--End list-group-item-->  
@@ -126,6 +126,7 @@ a {
   <div ng-if="data.totalTrainingCount == 0" class="panel-body ng-scope">
     ${You have no active trainings} <a ng-if="data.completedCount >= 0" class="pull-right" href="?id=tf_allmyti&sort=top">${View completed}</a>
   </div>
-</div><!--End panel-->  ]]></template>
+</div><!--End panel-->  
+]]></template>
     </sp_widget>
 </record_update>

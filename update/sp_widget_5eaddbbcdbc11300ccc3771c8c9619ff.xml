@@ -2,9 +2,43 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <client_script><![CDATA[function($rootScope) {
+  /* widget controller */
+  var c = this;
+	$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
+}
+]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.list-group-item {
+  padding: 5px;
+  border: none;
+}
+
+.summary {
+	font-weight: bold;
+}
+
+.progress-bar, .progress-bar-inner {
+  
+  max-width: 450px;
+  width:100%;
+  height:15px;
+  border-radius:4px;
+}
+
+
+.progress-bar {
+  background:#BDC3C7;
+  margin-top:5px;
+}
+
+.progress-bar-inner {
+  background:#278efc;
+}
+
+.panel-heading {
+  height:60px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -18,20 +52,176 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+	data.articles = [];
+	//data.training = "";
+	//data.number = "";
+	//data.percent ="";
+	var training = $sp.getParameter('sys_id');
+	var tr = new GlideRecord('x_206907_devo_tf_training_instance');
+	tr.get(training);
+	data.training = tr.short_description.getDisplayValue();
+	data.summary = tr.summary.getDisplayValue();
+	data.number = tr.number.getValue();
+	data.percent = tr.percent.getValue();
+	if(tr.schedule){
+		data.schedule = tr.schedule.getGlideObject().getLocalDate().getDisplayValue();
+		var startTime = tr.schedule.getValue();
+		var sTimeArray = startTime.split(' ');
+		data.start_time = sTimeArray[1];
+	}
+	if(tr.schedule_end){
+		data.schedule_end = tr.schedule_end.getGlideObject().getLocalDate().getDisplayValue();
+		var endTime = tr.schedule_end.getValue();
+		var sEndTimeArray = endTime.split(' ');
+		data.end_time = sEndTimeArray[1];
+	}
+	data.state = tr.state.getDisplayValue();
+	data.author = tr.author.getDisplayValue();
+	data.formation_type = tr.formation_type.getDisplayValue();
+
+	//Building breadcrumbs :
+	//1-All my Trainings Page :
+	data.title = gs.getMessage("All My Trainings");
+	data.breadcrumbs = [{label: data.title, url: '?id=tf_allmyti'}];
+	//2-Current training page :
+	data.breadcrumbs.push({label: data.training, url: '#'});
+	//end breadcrumbs
+
+	var user = gs.getUserID();
+	var z = new GlideRecord('x_206907_devo_tf_module_instance');
+	z.addQuery("from_training", training);//select modules of training
+	z.orderBy('number');
+	z.query();
+	while (z.next()) {
+		var a = {};
+		$sp.getRecordValues(a, z, 'short_description,description,sys_id,formation_type,number,site,completion_time,content');
+		$sp.getRecordDisplayValues(a, z, 'state');
+		a.instructor = z.instructor.getDisplayValue();
+		a.support = z.support.getDisplayValue();
+		a.supportlink = z.support.getValue();
+		a.supporttitle =  z.support.short_description.getValue();
+		if (z.schedule)
+			a.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+		if (z.schedule_end)
+			a.schedule_end = z.schedule_end.getGlideObject().getLocalDate().getDisplayValue();
+		data.articles.push(a);
+	}
+})()
+
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:31:41</sys_created_on>
         <sys_id>5eaddbbcdbc11300ccc3771c8c9619ff</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>TF - Module Instances</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_5eaddbbcdbc11300ccc3771c8c9619ff</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-22 15:31:41</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2018-03-23 15:39:51</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{options.color}} b">
+  <div class="panel-heading"> 
+    <h2 class="h4 panel-title">
+       <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
+  	  <span>${Training} - {{data.number}} : {{data.training}}</span>
+    </h2>
+  </div>  
+    <div class="panel-body">
+    	<div class="list-group">
+      	<div class="list-group-item">
+ 				 	<div ng-if="data.summary" class="summary">
+          	<span class="col-lg-3">${Summary} : </span><span class="col-lg-9">{{data.summary}}</span>
+        	</div>
+        &nbsp;
+       	<div ng-if="data.state" class="summary">
+         <span class="col-lg-3">${State} : </span><span class="col-lg-9">{{data.state}}</span>
+       	</div>
+        <span class="col-lg-3"></span>
+				<span class="col-lg-9">
+ 					<div class="progress-bar">
+        	<div class="progress-bar-inner" ng-style="{width: data.percent + '%'}"></div>
+        	</div>
+         </span>
+        &nbsp;
+        <div ng-if="data.formation_type">
+          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{data.formation_type}}</span>
+        </div>
+        <div ng-if="data.schedule">
+         <span class="col-lg-3">${Starting}</span><span class="col-lg-9">{{data.schedule}} ${at} {{data.start_time}}</span>
+        </div>
+        <div ng-if="data.schedule_end">
+          <span class="col-lg-3">${Ending} : </span><span class="col-lg-9">{{data.schedule_end}} ${at} {{data.end_time}}</span>
+        </div>
+        <div ng-if="data.owner">
+          <span class="col-lg-3">${Owner} : </span><span class="col-lg-9">{{data.owner}}</span>
+        </div>
+        <div ng-if="data.author">
+          <span class="col-lg-3">${Author} : </span><span class="col-lg-9">{{data.author}}</span>
+        </div>
+          
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="panel panel-success" ng-if="::(data.articles.length > 0)"  ng-repeat="a in data.articles">
+  <div class="panel-heading"> 
+    <h2 class="h4 panel-title">
+    <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
+    <span>${Module} - {{a.number}} : {{a.short_description}}</span>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <div class="list-group-item">
+        <!--<a href="?id=kb_article&sys_id={{::a.sys_id}}">{{::a.short_description}}</a>-->
+        <div class="summary">
+          <span class="col-lg-3">${State} : </span>
+          <span class="col-lg-9">{{a.state}}</span>
+        </div>
+        <div ng-if="a.support" class="summary">
+          <span class="col-lg-3">${Material} : </span>
+          <a href="?id=kb_article&sys_id={{a.supportlink}}">
+          <span class="col-lg-9">{{a.support}} - {{a.supporttitle}}</span>
+          </a>
+        </div>
+        &nbsp;
+        <div class="summary">
+          <span class="col-lg-3">${Summary} : </span><span class="col-lg-9">{{a.description}}</span>
+        </div>
+        &nbsp;
+        <div>
+          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{a.formation_type}}</span>
+        </div>
+        <div ng-if="a.schedule">
+          <span class="col-lg-3">${Starting} : </span><span class="col-lg-9">{{a.schedule}}</span>
+        </div>
+        <div ng-if="a.schedule_end">
+          <span class="col-lg-3">${Ending} : </span><span class="col-lg-9">{{a.schedule_end}}</span>
+        </div>
+        <div ng-if="a.instructor">
+          <span class="col-lg-3">${Instructor} : </span><span class="col-lg-9">{{a.instructor}}</span>
+        </div>
+        <div ng-if="a.site">
+          <span class="col-lg-3">${Site} : </span><span class="col-lg-9">{{a.site}}</span>
+        </div>
+        <div ng-if="a.completion_time">
+          <span class="col-lg-3">${Completion Time} : </span><span class="col-lg-9">{{a.completion_time}}</span>
+        </div>
+
+      
+        &nbsp;
+        <div>
+          <a href="?id=tf_module_ins&sys_id={{::a.sys_id}}" class="btn btn-success m-b"><span>${View}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
