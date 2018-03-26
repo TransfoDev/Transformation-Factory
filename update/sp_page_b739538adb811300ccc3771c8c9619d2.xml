@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>body{
+background-image: url(Devoteam_Background.png);
+background-repeat: no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-position: center center;
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>tf_module_ins</id>
+        <internal>false</internal>
+        <public>false</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-03-26 12:24:48</sys_created_on>
+        <sys_id>b739538adb811300ccc3771c8c9619d2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>tf_module_ins</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_page_b739538adb811300ccc3771c8c9619d2</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-26 12:25:06</sys_updated_on>
+        <title>My Module Details</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=b739538adb811300ccc3771c8c9619d2"/>
+</record_update>

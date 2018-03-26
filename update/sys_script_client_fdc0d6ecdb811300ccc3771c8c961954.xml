@@ -14,45 +14,45 @@ If none, we invite the user to choose another.</description>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
 	
-	//We only run this script when creating a new regstration, we do not want to override old records
-	if(!g_form.isNewRecord())  return; 
-	
-	//We get the current event informations
-	if(g_form.getValue('event') != ''){
-		var grEvt = new GlideRecord ('x_206907_devo_tf_events_list');
-		grEvt.get(g_form.getValue('event'));
-
-		//We keep the difference between the current invintations total and the event capacity
-		var cap = grEvt.capacity - grEvt.invitations;
-
-		g_form.setValue('event_capacity', cap);
-		g_form.addDecoration('event_capacity','icon-alert','Check Event Capacity before Submiting','color-red');
+	if(!g_form.isNewRecord() || isLoading)  return;
 		
-		//If the event is already at full capacity, we inform the user, and invite him to fill in an other event
-		if(cap == 0){
-			if(confirm("This Event is full already. \n Please choose another.")){
-				g_form.setValue('event', null);
+	var ga = new GlideAjax('x_206907_devo_tf.guestCount');
+	ga.addParam("sysparm_name", "count");
+	ga.addParam("sysparm_event", newValue);
+	ga.getXML("guestCountParse");
+	//ga.getXMLWait();
+	
+	function guestCountParse(response) {
+		alert('hi, this is the Parse');
+		var answer = response.responseXML.getElementsByTagName("answer");
+		
+		var cap = answer[0].getAttribute("capacity");
+		//	if (ga.getAnswer()){
+			// 	var cap = ga.getAnswer();
+			alert('capacity : '+ cap);
+			
+			g_form.setValue('event_capacity', cap);
+			g_form.addDecoration('event_capacity','icon-alert','Check Event Capacity before Submitting','color-red');
+			
+			if(cap == 0){
+				if(confirm("This Event is full already. \n Please choose another.")){
+					g_form.clearValue('event');
+				}
+			}
+			
+			//Else, we just inform the user how many more guest the event can accepts
+			else{
+				alert("Beware, this event can only accept " + cap + " more guests. Adapt your guests list in consideration.");
 			}
 		}
-		
-		//Else, we just inform the user how many more guest the event can accepts
-		else{
-			alert("Beware, this event can only accept " + cap + " more guests. Adapt your guests list in consideration.");
-		}
-	}
-	else {
-		g_form.setValue('event_capacity', '');
-	}
-}
-
-]]></script>
+	}]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>anoufel</sys_created_by>
         <sys_created_on>2018-03-21 15:23:03</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>fdc0d6ecdb811300ccc3771c8c961954</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>TF - Calculate Event Capacity</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -60,7 +60,7 @@ If none, we invite the user to choose another.</description>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_client_fdc0d6ecdb811300ccc3771c8c961954</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-22 08:45:55</sys_updated_on>
+        <sys_updated_on>2018-03-26 15:29:52</sys_updated_on>
         <table>x_206907_devo_tf_events_registrations</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

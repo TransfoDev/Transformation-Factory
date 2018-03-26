@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>My Module Details - Container 2</name>
+        <order>2</order>
+        <sp_page display_value="tf_module_ins">b739538adb811300ccc3771c8c9619d2</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-03-26 12:25:14</sys_created_on>
+        <sys_id>4e59978adb811300ccc3771c8c961904</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Module Details - Container 2</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_container_4e59978adb811300ccc3771c8c961904</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-26 12:25:14</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>
