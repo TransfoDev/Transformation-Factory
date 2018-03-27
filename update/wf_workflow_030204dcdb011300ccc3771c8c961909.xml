@@ -34,12 +34,12 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-20 10:15:12</sys_created_on>
         <sys_id>29b10cdcdb011300ccc3771c8c9619df</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-23 16:22:00</sys_updated_on>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-27 09:09:44</sys_updated_on>
         <table>x_206907_devo_tf_module_definition</table>
         <timezone/>
-        <validated>false</validated>
+        <validated>true</validated>
         <workflow display_value="TF - Module Approval">030204dcdb011300ccc3771c8c961909</workflow>
     </wf_workflow_version>
     <wf_workflow action="INSERT_OR_UPDATE">
