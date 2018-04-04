@@ -43,32 +43,32 @@
 	z.query();
 	while (z.next()) {
 		var a = {};
-		$sp.getRecordValues(a, z, 'short_description,sys_id,formation_type,number,summary');
+		$sp.getRecordValues(a, z, 'short_description,sys_id,training_type,number,summary');
 		if(z.schedule)
-		a.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+		a.schedule = z.schedule.getDisplayValue();
 		if(z.schedule_end)
-		a.schedule_end = z.schedule_end.getGlideObject().getLocalDate().getDisplayValue();
+		a.schedule_end = z.schedule_end.getDisplayValue();
 		if(z.end_validation_date)
-		a.end_validation_date = z.end_validation_date.getGlideObject().getLocalDate().getDisplayValue();
+		a.end_validation_date = z.end_validation_date.getDisplayValue();
 		a.owner = z.owner.getDisplayValue();
 		a.author = z.author.getDisplayValue();
 		data.articles.push(a);
 	}
-})()
+})();
 ]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:27:58</sys_created_on>
         <sys_id>40dcd3bcdbc11300ccc3771c8c961920</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>TF - Training Definitions</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_40dcd3bcdbc11300ccc3771c8c961920</sys_update_name>
-        <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 16:04:28</sys_updated_on>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-28 12:40:40</sys_updated_on>
         <template><![CDATA[<div class="panel panel-{{options.color}} b col-md-5" ng-if="(data.articles.length > 0)"  ng-repeat="a in data.articles">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
@@ -83,8 +83,8 @@
           <span class="col-md-6">${Summary} : </span><span class="col-md-6">{{a.summary}}</span>
         </div>
         &nbsp;
-        <div ng-if="a.formation_type">
-          <span class="col-md-6">${Training Type} : </span><span class="col-md-6">{{a.formation_type}}</span>
+        <div ng-if="a.training_type">
+          <span class="col-md-6">${Training Type} : </span><span class="col-md-6">{{a.training_type}}</span>
         </div>
         <div ng-if="a.schedule">
          <span class="col-md-6">${Starting} : </span><span class="col-md-6">{{a.schedule}}</span>

@@ -42,19 +42,21 @@
 	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,formation_type,content,number_of_available_places,completion_time,site,number_of_available_places');
 	$sp.getRecordDisplayValues(data, z, 'instructor');
 	if(z.schedule)
-		data.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+		//data.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+	data.schedule = z.schedule.getDisplayValue();
 	data.support = z.support.getDisplayValue();
-	data.supportlink = z.support.getValue();
-	data.supporttitle =  z.support.short_description.getValue();
-
-	data.title = z.short_description.getValue();
-
+  data.supportlink = z.support.sys_id.toString();
+ // data.supporttitle = z.getElement('support').short_description;
+	data.supporttitle =  z.support.short_description.getDisplayValue();
+//	data.title = z.short_description.getValue();
+   data.title = z.short_description.getDisplayValue();
 	//Breadcrumbs
 	//var rec = z.from_training.getRefRecord();	
 	data.breadcrumbs = [{label: data.title, url: '#'}];
 	//data.breadcrumbs.unshift({label: rec.getDisplayValue(), url: '?id=tf_modules&sys_id=' + rec.getUniqueValue()});
 	data.allti = gs.getMessage("All Trainings");
 	data.breadcrumbs.unshift({label: data.allti, url: '?id=tf_trainings'});
+	
 })()
 
 ]]></script>
@@ -63,14 +65,14 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:32:46</sys_created_on>
         <sys_id>9eedd7bcdbc11300ccc3771c8c961949</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Module Details</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_9eedd7bcdbc11300ccc3771c8c961949</sys_update_name>
-        <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 15:03:33</sys_updated_on>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-03-28 08:06:57</sys_updated_on>
         <template><![CDATA[<div class="panel panel-{{options.color}}">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
@@ -98,13 +100,12 @@
         </div>
         <div ng-if="data.description" class="summary">
           <span class="col-lg-3">${Description : }</span><span class="col-lg-9">{{data.description}}</span>
-        </div>
-         <div ng-if="data.support" class="summary">
+        </div>     
+           <div ng-if="data.support" class="summary">
           <span class="col-lg-3">${Material} : </span>
+             
           <a href="?id=kb_article&sys_id={{::data.supportlink}}">
             <span class="col-lg-9">{{data.support}} - {{data.supporttitle}}</span>
-           </a>
-         </div>
          <br/>
           &nbsp;
         <div ng-if="data.content">
@@ -116,7 +117,6 @@
       </div>
     </div>
   </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

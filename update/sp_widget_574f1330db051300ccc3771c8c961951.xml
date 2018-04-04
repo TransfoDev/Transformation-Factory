@@ -55,13 +55,13 @@
         <demo_data/>
         <description/>
         <docs/>
-        <field_list/>
+        <field_list>glyph,title,color</field_list>
         <has_preview>false</has_preview>
         <id>my-module-details</id>
         <internal>false</internal>
         <link/>
         <name>My module details</name>
-        <option_schema/>
+        <option_schema>[{"name":"max_number","section":"Presentation","label":"Max number","type":"integer"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -72,27 +72,31 @@
 	var user = gs.getUserID();
 	//var a = {};
 	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,content,number_of_available_places,personal_notes');
-	data.status = z.state.getValue();
-	$sp.getRecordDisplayValues(data, z, 'instructor,formation_type');
+	data.status= z.getValue('state');
+// 	data.a = data.status;
+	$sp.getRecordDisplayValues(data, z, 'instructor,training_type');
 	data.state = z.state.getDisplayValue();
-	data.title = z.short_description.getValue();
-	data.support = z.support.getDisplayValue();
-	data.supportlink = z.support.getValue();
-	data.supporttitle =  z.support.short_description.getValue();
+  data.title = z.short_description.getDisplayValue();
 	if(z.schedule)
-		data.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
-	if(z.start){
-		data.start = z.start.getGlideObject().getLocalDate().getDisplayValue();
-		var startTime = z.start.getValue();
+		data.schedule = z.schedule.getDisplayValue();
+if(z.start){
+		//data.u_start = z.u_start.getGlideObject().getLocalDate().getDisplayValue();
+		//var startTime = z.u_start.getValue();
+//var startTime = GlideDateTime().getDate().getValue();
+	data.start = z.start.getDisplayValue();
+		var startTime = z.start.getDisplayValue();
 		var sTimeArray = startTime.split(' ');
 		data.start_time = sTimeArray[1];
 	}
 	if(z.end){
-		data.end = z.end.getGlideObject().getLocalDate().getDisplayValue();
-		var endTime = z.end.getValue();
+		//data.u_end = z.u_end.getGlideObject().getLocalDate().getDisplayValue();
+	//	var endTime = GlideDateTime().getDate().getValue();
+		data.end = z.end.getDisplayValue();
+  var endTime = z.end.getDisplayValue();
 		var sEndTimeArray = endTime.split(' ');
 		data.end_time = sEndTimeArray[1];
 	}
+
 	data.duration = z.duration_resolution.getDisplayValue();
 	//Breadcrumbs
 	var rec = z.from_training.getRefRecord();	
@@ -124,15 +128,16 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:38:51</sys_created_on>
         <sys_id>574f1330db051300ccc3771c8c961951</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>My module details</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_574f1330db051300ccc3771c8c961951</sys_update_name>
-        <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 15:12:35</sys_updated_on>
-        <template><![CDATA[<div class="panel panel-{{options.color}}">
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-04 13:30:18</sys_updated_on>
+        <template><![CDATA[<!-- <pre> {{data|json}}</pre> -->
+<div class="panel panel-{{options.color}}">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
       <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
@@ -145,15 +150,15 @@
         <div ng-if="data.schedule" class="summary">
           <span class="col-lg-3">${Schedule : }</span><span class="col-lg-9">{{data.schedule}}</span>
         </div>
-        &nbsp;
-        <div ng-if="data.status==1 && data.formation_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('start')">${Start Module}</div>   
-        <div ng-if="data.status==2 && data.formation_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('complete')">${Complete Module}</div>  
-        &nbsp;
+
+        <div ng-if="data.status == '1' && data.training_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('start')">${Start Module}</div>   
+        <div ng-if="data.status == '2' && data.training_type == 'E-Learning'" class="btn btn-success m-b" ng-click="c.nextState('complete')">${Complete Module}</div>  
+
         <div ng-if="data.description" class="summary">
           <span class="col-lg-3">${Description} : </span>
           <span class="col-lg-9" >{{data.description}}</span>
         </div>
-        &nbsp;
+  
         <div ng-if="data.state" class="summary">
           <span class="col-lg-3">${State} : </span>
           <span class="col-lg-9" >{{data.state}}</span>
@@ -166,9 +171,9 @@
           <span class="col-lg-3">${Ended} : </span>
           <span class="col-lg-9" >{{data.end}} ${at} {{data.end_time}}</span>
         </div>
-        <div ng-if="data.duration !== 'undefined' && data.end" class="summary">
+        <div ng-if="data.duration_resolution !== 'undefined' && data.end" class="summary">
           <span class="col-lg-3">${Duration} : </span>
-          <span class="col-lg-9" >{{data.duration}}</span>
+          <span class="col-lg-9" >{{data.duration_resolution}}</span>
         </div>
         &nbsp;
         <div ng-if="data.support" class="summary">

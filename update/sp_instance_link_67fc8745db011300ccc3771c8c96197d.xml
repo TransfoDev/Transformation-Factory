@@ -3,9 +3,9 @@
     <sp_instance_link action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
-        <color>default</color>
+        <color>warning</color>
         <css/>
-        <glyph/>
+        <glyph>book</glyph>
         <id/>
         <kb_article/>
         <kb_category/>
@@ -14,7 +14,7 @@
         <roles/>
         <sc_cat_item/>
         <sc_category/>
-        <short_description/>
+        <short_description>Documentation concerning the Transformation Factory</short_description>
         <size>md</size>
         <sp_column display_value="3">25049b38dbc11300ccc3771c8c961985</sp_column>
         <sp_page/>
@@ -23,18 +23,23 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-23 08:57:20</sys_created_on>
         <sys_id>67fc8745db011300ccc3771c8c96197d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Documentation</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_instance_link_67fc8745db011300ccc3771c8c96197d</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 08:57:20</sys_updated_on>
-        <title/>
-        <type>page</type>
-        <url/>
-        <widget_parameters/>
+        <sys_updated_on>2018-03-30 14:03:26</sys_updated_on>
+        <title>Documentation</title>
+        <type>url</type>
+        <url>sp?id=kb_category&amp;kb_category=3d3f7eafdb0c1300a61f55d0cf96197a&amp;spa=1</url>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Circle Icon",
+		"displayValue": "Circle Icon"
+	}
+}]]></widget_parameters>
     </sp_instance_link>
     <sys_translated_text action="delete_multiple" query="documentkey=67fc8745db011300ccc3771c8c96197d"/>
 </record_update>

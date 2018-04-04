@@ -43,13 +43,13 @@
         <demo_data/>
         <description/>
         <docs/>
-        <field_list/>
+        <field_list>title,color,glyph</field_list>
         <has_preview>false</has_preview>
         <id>tf-module-instances</id>
         <internal>false</internal>
         <link/>
         <name>TF - Module Instances</name>
-        <option_schema/>
+        <option_schema>[{"name":"max_number","section":"Presentation","label":"Max number","type":"integer"},{"displayValue":"Knowledge Category","name":"kb_category","section":"Data","label":"KB category","type":"reference","value":"kb_category","ed":{"reference":"kb_category"}}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -62,23 +62,23 @@
 	tr.get(training);
 	data.training = tr.short_description.getDisplayValue();
 	data.summary = tr.summary.getDisplayValue();
-	data.number = tr.number.getValue();
-	data.percent = tr.percent.getValue();
+	data.number = tr.number.getDisplayValue();
+	data.percent = tr.percent.getDisplayValue();
 	if(tr.schedule){
-		data.schedule = tr.schedule.getGlideObject().getLocalDate().getDisplayValue();
-		var startTime = tr.schedule.getValue();
+		data.schedule = tr.schedule.getDisplayValue();
+		var startTime = tr.schedule.getDisplayValue();
 		var sTimeArray = startTime.split(' ');
 		data.start_time = sTimeArray[1];
 	}
 	if(tr.schedule_end){
-		data.schedule_end = tr.schedule_end.getGlideObject().getLocalDate().getDisplayValue();
-		var endTime = tr.schedule_end.getValue();
+		data.schedule_end = tr.schedule_end.getDisplayValue();
+		var endTime = tr.schedule_end.getDisplayValue();
 		var sEndTimeArray = endTime.split(' ');
 		data.end_time = sEndTimeArray[1];
 	}
 	data.state = tr.state.getDisplayValue();
 	data.author = tr.author.getDisplayValue();
-	data.formation_type = tr.formation_type.getDisplayValue();
+	data.training_type = tr.training_type.getDisplayValue();
 
 	//Building breadcrumbs :
 	//1-All my Trainings Page :
@@ -95,16 +95,16 @@
 	z.query();
 	while (z.next()) {
 		var a = {};
-		$sp.getRecordValues(a, z, 'short_description,description,sys_id,formation_type,number,site,completion_time,content');
+		$sp.getRecordValues(a, z, 'short_description,description,sys_id,training_type,number,site,completion_time,content');
 		$sp.getRecordDisplayValues(a, z, 'state');
 		a.instructor = z.instructor.getDisplayValue();
-		a.support = z.support.getDisplayValue();
-		a.supportlink = z.support.getValue();
-		a.supporttitle =  z.support.short_description.getValue();
+	//	a.support = z.support.getDisplayValue();
+	//	a.supportlink = z.support.sys_id.toString();
+	//	a.supporttitle =  z.support.short_description.getDisplayValue();
 		if (z.schedule)
-			a.schedule = z.schedule.getGlideObject().getLocalDate().getDisplayValue();
+			a.schedule = z.schedule.getDisplayValue();
 		if (z.schedule_end)
-			a.schedule_end = z.schedule_end.getGlideObject().getLocalDate().getDisplayValue();
+			a.schedule_end = z.schedule_end.getDisplayValue();
 		data.articles.push(a);
 	}
 })()
@@ -115,14 +115,14 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:31:41</sys_created_on>
         <sys_id>5eaddbbcdbc11300ccc3771c8c9619ff</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>TF - Module Instances</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_5eaddbbcdbc11300ccc3771c8c9619ff</sys_update_name>
-        <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 15:39:51</sys_updated_on>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-04 08:47:37</sys_updated_on>
         <template><![CDATA[<div class="panel panel-{{options.color}} b">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
@@ -147,8 +147,8 @@
         	</div>
          </span>
         &nbsp;
-        <div ng-if="data.formation_type">
-          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{data.formation_type}}</span>
+       <div ng-if="data.training_type">
+          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{data.training_type}}</span>
         </div>
         <div ng-if="data.schedule">
          <span class="col-lg-3">${Starting}</span><span class="col-lg-9">{{data.schedule}} ${at} {{data.start_time}}</span>

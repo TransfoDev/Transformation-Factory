@@ -56,20 +56,21 @@
         <demo_data/>
         <description/>
         <docs/>
-        <field_list/>
+        <field_list>color</field_list>
         <has_preview>false</has_preview>
         <id>tf-my-survey</id>
         <internal>false</internal>
         <link/>
         <name>TF -  My Surveys</name>
-        <option_schema/>
+        <option_schema>[{"name":"maxRecords","section":"Presentation","label":"Max Records","type":"integer"},{"name":"widgetTitle","section":"Presentation","label":"Title of the Widget","type":"string"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
   // populate the 'data' object
   // e.g., data.table = $sp.getValue('table');
 	data.maxRecords = options.maxRecords || 5;
-	var sp = new SPSurveyAPI();
+	//var sp = new x_206907_devo_tf.SPSurveyAPI();
+	var sp = new sn_portal_surveys.SPSurveyAPI();
 	options.showAll = $sp.getParameter('id') == 'my_surveys';
 	if($sp.getParameter('id') != 'my_surveys'){
 		if(options.widgetTitle && options.widgetTitle.length>0){
@@ -95,14 +96,14 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:40:12</sys_created_on>
         <sys_id>0f9f9bfcdbc11300ccc3771c8c9619bd</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>TF -  My Surveys</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_0f9f9bfcdbc11300ccc3771c8c9619bd</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-22 15:40:37</sys_updated_on>
+        <sys_updated_on>2018-03-30 13:19:34</sys_updated_on>
         <template><![CDATA[<div ng-if="!(options.showAll && options.showAll != 'false' && data.instances.length && data.totalRecords == data.maxRecords && data.totalRecords != 0)">
 	<div class="panel panel-{{::c.options.color}} b">
 		<div class="panel-heading">

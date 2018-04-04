@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Events List" max_length="40" name="x_206907_devo_tf_events_list" sizeclass="1" type="collection">
+    <element extends="task" label="Events List" max_length="40" name="x_206907_devo_tf_events_list" sizeclass="2" type="collection">
         <element label="Capacity" mandatory="true" max_length="40" name="capacity" type="integer"/>
         <element label="End" mandatory="true" max_length="40" name="end" type="glide_date_time"/>
         <element label="Invitations" max_length="40" name="invitations" read_only="true" type="integer"/>

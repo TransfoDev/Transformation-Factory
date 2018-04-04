@@ -3,12 +3,12 @@
     <sp_instance action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
-        <color>default</color>
+        <color>danger</color>
         <css/>
         <glyph/>
         <id/>
         <order>2</order>
-        <roles/>
+        <roles>x_206907_devo_tf.tf_training_resp</roles>
         <short_description/>
         <size>md</size>
         <sp_column display_value="1">1f0317c9db011300ccc3771c8c961905</sp_column>
@@ -17,17 +17,26 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-23 09:39:10</sys_created_on>
         <sys_id>189653c9db011300ccc3771c8c96192d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_instance_189653c9db011300ccc3771c8c96192d</sys_update_name>
-        <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 09:39:10</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-04 14:43:35</sys_updated_on>
         <title/>
         <url/>
-        <widget_parameters/>
+        <widget_parameters><![CDATA[{
+	"href": {
+		"value": "sp?id=tf_sc_cat_item&sys_id=754db98bdb011300ccc3771c8c961944",
+		"displayValue": "sp?id=tf_sc_cat_item&sys_id=754db98bdb011300ccc3771c8c961944"
+	},
+	"button_text": {
+		"value": "Register for a training",
+		"displayValue": "Register for a training"
+	}
+}]]></widget_parameters>
     </sp_instance>
     <sys_translated_text action="delete_multiple" query="documentkey=189653c9db011300ccc3771c8c96192d"/>
 </record_update>

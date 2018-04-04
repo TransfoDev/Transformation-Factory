@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Events Registrations" max_length="40" name="x_206907_devo_tf_events_registrations" sizeclass="5" type="collection">
+    <element extends="task" label="Events Registrations" max_length="40" name="x_206907_devo_tf_events_registrations" sizeclass="1" type="collection">
         <element label="Event" mandatory="true" max_length="32" name="event" reference="x_206907_devo_tf_events_list" type="reference"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;var grEvt = new GlideRecord ('x_206907_devo_tf_events_list');&#13;&#10;&#9;grEvt.get(eventAjax);&#13;&#10;&#9;&#13;&#10;&#9;var cap = grEvt.getValue(&quot;capacity&quot;) - grEvt.getValue(&quot;invitations&quot;);&#13;&#10;&#9;return cap ;  // return the calculated value&#13;&#10;&#9;&#13;&#10;})(current);" label="Event Capacity" max_length="40" name="event_capacity" read_only="true" type="integer" virtual="true"/>
         <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>

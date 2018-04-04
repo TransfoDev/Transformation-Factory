@@ -3,9 +3,9 @@
     <sp_container action="INSERT_OR_UPDATE">
         <background_color/>
         <background_image/>
-        <background_style>default</background_style>
+        <background_style>cover</background_style>
         <bootstrap_alt>false</bootstrap_alt>
-        <class_name/>
+        <class_name>visible-xs</class_name>
         <container_class_name/>
         <name>Transformation Factory Portal - Container 2</name>
         <order>2</order>
@@ -15,14 +15,14 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-23 08:59:05</sys_created_on>
         <sys_id>d56dcb45db011300ccc3771c8c9619f3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Transformation Factory Portal - Container 2</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_container_d56dcb45db011300ccc3771c8c9619f3</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-03-23 08:59:05</sys_updated_on>
+        <sys_updated_on>2018-03-30 13:08:47</sys_updated_on>
         <title/>
         <width>container</width>
     </sp_container>

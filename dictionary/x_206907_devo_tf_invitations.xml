@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Invitations" max_length="40" name="x_206907_devo_tf_invitations" sizeclass="3" type="collection">
+    <element extends="task" label="Invitations" max_length="40" name="x_206907_devo_tf_invitations" sizeclass="9" type="collection">
         <element label="End" max_length="40" name="end" type="glide_date_time"/>
         <element label="Event" max_length="32" name="event" reference="x_206907_devo_tf_events_list" type="reference"/>
         <element label="Premises" max_length="40" name="premises" type="string"/>

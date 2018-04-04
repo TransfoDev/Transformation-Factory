@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Training Registration">754db98bdb011300ccc3771c8c961944</catalog_item>
+        <catalog_variable>IO:dadf310fdb011300ccc3771c8c96199c</catalog_variable>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>false</mandatory>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-04-04 14:48:53</sys_created_on>
+        <sys_id>2480168ddbd11300ccc3771c8c9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>user</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_2480168ddbd11300ccc3771c8c9619bb</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-04 14:48:53</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Hide User When Group is filed in">bf605e4ddbd11300ccc3771c8c961995</ui_policy>
+        <variable>user</variable>
+        <variable_set/>
+        <visible>false</visible>
+    </catalog_ui_policy_action>
+</record_update>
