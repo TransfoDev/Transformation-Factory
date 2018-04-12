@@ -344,7 +344,7 @@ function handleRedirect(n, table, sys_id, redirectTo, redirectUrl) {
 		}
 		*/
 		$timeout(function (){
-				 $window.location.href = "/sp?id=tf_sc_cat_item&sys_id=bc209785db40d300a61f55d0cf9619db";
+				 $window.location.href = "/tf?id=tf_sc_cat_item&sys_id=754db98bdb011300ccc3771c8c961944";
 				 },4000);
 		
 	
@@ -786,14 +786,14 @@ function handleRedirect(n, table, sys_id, redirectTo, redirectUrl) {
         <sys_created_by>anoufel</sys_created_by>
         <sys_created_on>2018-04-04 12:55:44</sys_created_on>
         <sys_id>bca6fdc9db911300ccc3771c8c961964</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>TF SC Catalog Item</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_bca6fdc9db911300ccc3771c8c961964</sys_update_name>
-        <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-04 13:03:47</sys_updated_on>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-04-05 13:11:44</sys_updated_on>
         <template><![CDATA[<div id="sc_cat_item" ng-if="::data.recordFound">
   <sp-widget widget="c.orderItemModal" ng-if="c.orderItemModal"></sp-widget>
   <div class="row" ng-if="::data.sc_cat_item" >

@@ -56,10 +56,10 @@ height: 55px;
         <docs/>
         <field_list>title,color,glyph,filter,display_field,sp_page,table,order_direction,maximum_entries,order_by</field_list>
         <has_preview>true</has_preview>
-        <id>news-ticker-sl</id>
+        <id>testnews-sl</id>
         <internal>false</internal>
         <link/>
-        <name>News Ticker Single Line</name>
+        <name>Test News Ticker Single Line</name>
         <option_schema/>
         <public>true</public>
         <roles/>
@@ -75,13 +75,14 @@ data.num_lines = 1;
 data.height = (data.line_height - 1) * data.num_lines;
 data.sp_page = options.sp_page_dv;
 data.list = [];
+
 var grr = new GlideRecord('kb_knowledge');
 //KAS : adding valid_to date as a filter
 //var t = new GlideDateTime();
 //data.b=t;
-var today = GlideDateTime().getDate().getValue();
-data.a=today;
-grr.addQuery('valid_to','>=',today);
+// var today = GlideDateTime().getDate().getValue();
+// data.a=today;
+// grr.addQuery('valid_to','>=',today);
 var filter = 'workflow_state=published^kb_knowledge_base=225b7aebdb0c1300a61f55d0cf9619c4^kb_category=182497efdb4c1300a61f55d0cf9619e9'
 grr.addEncodedQuery(filter);
 if (filter)
@@ -93,97 +94,20 @@ else
 grr.setLimit(options.maximum_entries);
 grr.query();
 data.c = grr;
-
-
-
-
-
-
-/*
-//var gr = new GlideRecordSecure(options.table);
-var gr = new GlideRecord('kb_knowledge');
-//KAS : adding valid_to date as a filter
-//var t = new GlideDateTime();
-//data.b=t;
-var today = GlideDateTime().getDate().getValue();
-data.a=today;
-gr.addQuery('valid_to','>=',today);
-var filter = 'workflow_state=published^kb_knowledge_base=225b7aebdb0c1300a61f55d0cf9619c4^kb_category=182497efdb4c1300a61f55d0cf9619e9'
-gr.addEncodedQuery(filter);
-if (filter)
-	gr.addEncodedQuery(filter);
-if (options.order_direction == "asc")
-	gr.orderBy(options.order_by);
-else
-	gr.orderByDesc(options.order_by);
-gr.setLimit(options.maximum_entries);
-gr.query();
-while (gr.next()) {
-	var record = {};
-	record.sys_id = gr.sys_id.getDisplayValue();
-	if (options.image_field) {
-		record.image_field = gr.getDisplayValue(options.image_field);
-		if (!record.image_field)
-			record.image_field = "/noimage.pngx";
-	}
-
-	if (options.display_field)
-		record.display_field = gr.getDisplayValue(options.display_field);
-*/
-	//Get current user langage
-	/*var currentUser = gs.getUserID();
-	var currentUser_lg = new GlideRecord('sys_user');
-	currentUser_lg.addQuery('sys_id', gs.getUser().getID());
-	currentUser_lg.query();*/
-	
-	// get the KB category to use for the HTML displaying
-/*	record.kb_category = gr.getValue("kb_category");
-	record.category1 = gs.getProperty("edf.cat_news_widget");
-	record.category2 = gs.getProperty("edf.cat_alert_widget");
-	*/
-	/*var fr_article = new GlideRecord("kb_knowledge");
-	fr_article = 
-
-	options.secondary_fields = options.secondary_fields || "";
-	options.secondary_fields = options.secondary_fields.split(",");
-
-	record.secondary_fields = [];
-	if (options.secondary_fields) {
-		options.secondary_fields.forEach(function(f) {
-			record.secondary_fields.push(getField(gr, f));
-		});
-	}
-
-	record.url = "";
-	if (data.sp_page)
-		record.url = "?id="+data.sp_page+"&table="+data.table+"&sys_id="+record.sys_id+"&view=sp";
-
-	data.list.push(record);
-
-}
-
-function getField(gr, name) {
-	var f = {};
-	f.display_value = gr.getDisplayValue(name);
-	f.value = gr.getValue(name);
-	var ge = gr.getElement(name);
-	f.type = ge.getED().getInternalType()
-	f.label = ge.getLabel();
-	return f;
-}*/]]></script>
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>ccouble</sys_created_by>
-        <sys_created_on>2018-03-22 15:44:05</sys_created_on>
-        <sys_id>3f70e330db051300ccc3771c8c96193b</sys_id>
-        <sys_mod_count>79</sys_mod_count>
-        <sys_name>News Ticker Single Line</sys_name>
+        <sys_created_by>mdaghari</sys_created_by>
+        <sys_created_on>2018-04-12 13:34:04</sys_created_on>
+        <sys_id>1c2c4fe3db595300ccc3771c8c961979</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Test News Ticker Single Line</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
-        <sys_update_name>sp_widget_3f70e330db051300ccc3771c8c96193b</sys_update_name>
+        <sys_update_name>sp_widget_1c2c4fe3db595300ccc3771c8c961979</sys_update_name>
         <sys_updated_by>mdaghari</sys_updated_by>
-        <sys_updated_on>2018-04-12 12:58:47</sys_updated_on>
+        <sys_updated_on>2018-04-12 13:49:15</sys_updated_on>
         <template><![CDATA[ <!-- <pre> {{data|json}}</pre> -->
         <!-- <span ng-if="item.kb_category== item.category1" class="pull-right"
 <div class="tickets-tf">

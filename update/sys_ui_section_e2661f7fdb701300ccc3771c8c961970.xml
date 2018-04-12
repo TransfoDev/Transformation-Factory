@@ -4,42 +4,70 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
             <position>0</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 12:26:27</sys_created_on>
-            <sys_id>b376177fdb701300ccc3771c8c9619b6</sys_id>
+            <sys_created_by>anoufel</sys_created_by>
+            <sys_created_on>2018-04-05 14:44:51</sys_created_on>
+            <sys_id>c5391759db9d1300ccc3771c8c961907</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Module Information" display_value="Module Information" name="x_206907_devo_tf_module_definition" sys_domain="global" view="Default view">e2661f7fdb701300ccc3771c8c961970</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 12:26:27</sys_updated_on>
+            <sys_updated_by>anoufel</sys_updated_by>
+            <sys_updated_on>2018-04-05 14:44:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>comments</element>
+            <position>1</position>
+            <sys_created_by>anoufel</sys_created_by>
+            <sys_created_on>2018-04-05 14:44:51</sys_created_on>
+            <sys_id>49391759db9d1300ccc3771c8c961907</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Module Information" display_value="Module Information" name="x_206907_devo_tf_module_definition" sys_domain="global" view="Default view">e2661f7fdb701300ccc3771c8c961970</sys_ui_section>
+            <sys_updated_by>anoufel</sys_updated_by>
+            <sys_updated_on>2018-04-05 14:44:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>work_notes</element>
+            <position>2</position>
+            <sys_created_by>anoufel</sys_created_by>
+            <sys_created_on>2018-04-05 14:44:51</sys_created_on>
+            <sys_id>c9391759db9d1300ccc3771c8c961907</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Module Information" display_value="Module Information" name="x_206907_devo_tf_module_definition" sys_domain="global" view="Default view">e2661f7fdb701300ccc3771c8c961970</sys_ui_section>
+            <sys_updated_by>anoufel</sys_updated_by>
+            <sys_updated_on>2018-04-05 14:44:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>approval_comments</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 12:26:27</sys_created_on>
-            <sys_id>7776177fdb701300ccc3771c8c9619b6</sys_id>
+            <position>3</position>
+            <sys_created_by>anoufel</sys_created_by>
+            <sys_created_on>2018-04-05 14:44:51</sys_created_on>
+            <sys_id>4d391759db9d1300ccc3771c8c961907</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Module Information" display_value="Module Information" name="x_206907_devo_tf_module_definition" sys_domain="global" view="Default view">e2661f7fdb701300ccc3771c8c961970</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 12:26:27</sys_updated_on>
+            <sys_updated_by>anoufel</sys_updated_by>
+            <sys_updated_on>2018-04-05 14:44:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>content</element>
-            <position>2</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 12:26:27</sys_created_on>
-            <sys_id>f776177fdb701300ccc3771c8c9619b6</sys_id>
+            <position>4</position>
+            <sys_created_by>anoufel</sys_created_by>
+            <sys_created_on>2018-04-05 14:44:51</sys_created_on>
+            <sys_id>cd391759db9d1300ccc3771c8c961907</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Module Information" display_value="Module Information" name="x_206907_devo_tf_module_definition" sys_domain="global" view="Default view">e2661f7fdb701300ccc3771c8c961970</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 12:26:27</sys_updated_on>
+            <sys_updated_by>anoufel</sys_updated_by>
+            <sys_updated_on>2018-04-05 14:44:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

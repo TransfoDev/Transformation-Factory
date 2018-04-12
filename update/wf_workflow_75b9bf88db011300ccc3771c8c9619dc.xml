@@ -34,12 +34,12 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-04-04 08:44:25</sys_created_on>
         <sys_id>131d708ddb111300ccc3771c8c961956</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-04 09:02:59</sys_updated_on>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-11 11:49:09</sys_updated_on>
         <table>x_206907_devo_tf_training_definition</table>
         <timezone/>
-        <validated>false</validated>
+        <validated>true</validated>
         <workflow display_value="TF - Training Approval 4">75b9bf88db011300ccc3771c8c9619dc</workflow>
     </wf_workflow_version>
     <wf_workflow action="INSERT_OR_UPDATE">

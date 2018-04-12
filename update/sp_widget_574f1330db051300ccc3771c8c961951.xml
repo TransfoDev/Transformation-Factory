@@ -13,6 +13,14 @@
 	//fill in notes field with previous input
 	$scope.notes = $scope.data.u_personal_notes;
 
+	//Hide button if input is invalid
+	c.checkValid = function(){
+		if ($( '#my_notes' ).hasClass( 'ng-invalid' )){
+			$( '#save_button' ).hide();
+		}
+		else $( '#save_button' ).show();
+	}
+
 	//sends event to server that module is started or completed
 	c.nextState = function(action){
 		c.data.action = action;
@@ -50,6 +58,10 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   vertical-align: top;
+}
+
+.ng-invalid{
+  color : red;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -128,14 +140,14 @@ if(z.start){
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:38:51</sys_created_on>
         <sys_id>574f1330db051300ccc3771c8c961951</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>My module details</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_574f1330db051300ccc3771c8c961951</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-04 13:30:18</sys_updated_on>
+        <sys_updated_by>KASINGER</sys_updated_by>
+        <sys_updated_on>2018-04-10 09:30:07</sys_updated_on>
         <template><![CDATA[<!-- <pre> {{data|json}}</pre> -->
 <div class="panel panel-{{options.color}}">
   <div class="panel-heading"> 
@@ -158,7 +170,7 @@ if(z.start){
           <span class="col-lg-3">${Description} : </span>
           <span class="col-lg-9" >{{data.description}}</span>
         </div>
-  
+
         <div ng-if="data.state" class="summary">
           <span class="col-lg-3">${State} : </span>
           <span class="col-lg-9" >{{data.state}}</span>
@@ -192,13 +204,12 @@ if(z.start){
         <div>
           <hr/>
           <form>
-            <label>
-              ${Personal Notes} :
-              <input id="my_notes" type="text" name="notes" ng-model="notes" ng-minlength="3" ng-maxlength="1000" size="1000" class="notes">
-            </label>
+            <label>${Personal Notes} :</label>              
+            <textarea ng-keypress="c.checkValid()" id="my_notes" type="text" name="notes" ng-model="notes" ng-minlength="3" ng-maxlength="1000" size="1000" class="notes"></textarea>
           </form>
+          <br/>
           &nbsp;
-          <div class="btn btn-success m-b" ng-click="c.saveNotes('saveNotes')">${Save Notes}</div>
+          <div id="save_button" class="btn btn-success m-b" ng-click="c.saveNotes('saveNotes')">${Save Notes}</div>
         </div><!-- end input-->
       </div>
     </div>

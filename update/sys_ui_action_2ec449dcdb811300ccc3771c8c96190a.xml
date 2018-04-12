@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name/>
+        <action_name>reject_definively</action_name>
         <active>true</active>
         <client>false</client>
         <comments/>
-        <condition>current.state == 'requested'&amp;&amp; (gs.hasRole('approval_admin') || isApprovalMine(current))</condition>
+        <condition>current.state == 'requested' &amp;&amp; isApprovalMine(current)</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
-        <form_context_menu>false</form_context_menu>
+        <form_context_menu>true</form_context_menu>
         <form_link>false</form_link>
         <form_style/>
         <hint/>
@@ -23,13 +23,22 @@
         <name>Reject definitively</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[if(!JSUtil.nil(current.comments)){
-current.state = 'refused';
-current.update();
+        <script><![CDATA[  function rejectRequest()
+{
+      if (current.comments == '')
+    {
+			gs.addErrorMessage(gs.getMessage("Comments are required when rejecting an approval"));
+    }
+
 }
-else{
-gs.addErrorMessage(gs.getMessage('comments_for_refusal'));
-current.setAbortAction(true);
+if (typeof window == 'undefined')
+    serverReject();
+ 
+ 
+function serverReject()
+{
+    current.state='refused';
+  current.update();
 }]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -41,15 +50,15 @@ current.setAbortAction(true);
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2ec449dcdb811300ccc3771c8c96190a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Reject definitively</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_ui_action_2ec449dcdb811300ccc3771c8c96190a</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-20 15:07:28</sys_updated_on>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-12 15:46:27</sys_updated_on>
         <table>sysapproval_approver</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

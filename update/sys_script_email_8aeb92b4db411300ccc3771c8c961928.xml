@@ -8,15 +8,16 @@
 /* Optional GlideRecord */ event) {
 	/*var url = '<a href="' + gs.getProperty('glide.servlet.uri') + 'sp?id=approval&table=' + current.sys_class_name + '&sys_id=' + current.sys_id + '">Link</a>';*/
 	
-	var	descript=current.u_training.short_description;
-	//gs.addInfoMessage(descript);
-	var gr=new GlideRecord('u_training_instance');
+	var	descript=current.training.short_description;
+	gs.addInfoMessage(descript);
+	//var gr=new GlideRecord('u_training_instance');
+	var gr=new GlideRecord('x_206907_devo_tf_training_instance');
 	gr.addQuery('short_description',descript);
-	gr.addQuery('assigned_to',current.u_user);
+	gr.addQuery('assigned_to',current.user);
 	gr.query();
 	if(gr.next()) {
 
-		var url = '<a href="' + gs.getProperty('glide.servlet.uri') + 'sp?id=tf_modins&sys_id=' + gr.sys_id + '">LINK</a>';
+		var url = '<a href="' + gs.getProperty('glide.servlet.uri') + 'tf?id=tf_modins&sys_id=' + gr.sys_id + '">LINK</a>';
 		
 		template.print(url);
 	}
@@ -25,13 +26,13 @@
         <sys_created_by>anoufel</sys_created_by>
         <sys_created_on>2018-03-22 10:45:00</sys_created_on>
         <sys_id>8aeb92b4db411300ccc3771c8c961928</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>service_portal_link</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_email_8aeb92b4db411300ccc3771c8c961928</sys_update_name>
         <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-03-28 11:55:44</sys_updated_on>
+        <sys_updated_on>2018-04-05 16:06:21</sys_updated_on>
     </sys_script_email>
 </record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="spTicker">b7ef440ecb11120000f8d856634c9c36</sp_angular_provider>
+        <sp_widget display_value="Test News Ticker Single Line">1c2c4fe3db595300ccc3771c8c961979</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>mdaghari</sys_created_by>
+        <sys_created_on>2018-04-12 13:34:05</sys_created_on>
+        <sys_id>542c4fe3db595300ccc3771c8c96197c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spTicker.Copy of News Ticker Single Line</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_542c4fe3db595300ccc3771c8c96197c</sys_update_name>
+        <sys_updated_by>mdaghari</sys_updated_by>
+        <sys_updated_on>2018-04-12 13:34:05</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

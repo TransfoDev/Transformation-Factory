@@ -3,7 +3,7 @@
     <sp_instance action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
-        <color>danger</color>
+        <color>primary</color>
         <css/>
         <glyph/>
         <id/>
@@ -17,14 +17,14 @@
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-30 13:17:30</sys_created_on>
         <sys_id>3aab8023db8d1300ccc3771c8c9619d7</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_instance_3aab8023db8d1300ccc3771c8c9619d7</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-04 14:43:22</sys_updated_on>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-05 11:48:20</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters><![CDATA[{
