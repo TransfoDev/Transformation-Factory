@@ -39,7 +39,7 @@
         <mandatory>false</mandatory>
         <message/>
         <message_html><![CDATA[<p>&nbsp;</p>
-<p>Hello, Author: ${author}<br /><br /></p>
+<p>Hello,${author}<br /><br /></p>
 <p>Training&nbsp; ${short_description} is waiting for approval</p>
 <p>Instructor: ${u_instructor}</p>
 <p>Your training information is available to you on Service Portal: ${mail_script:TF_training_def}</p>
@@ -66,7 +66,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4f9bd37cdbc11300ccc3771c8c9619f9</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>TF - Training waiting for approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -74,7 +74,7 @@
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sysevent_email_action_4f9bd37cdbc11300ccc3771c8c9619f9</sys_update_name>
         <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-12 12:05:53</sys_updated_on>
+        <sys_updated_on>2018-04-13 09:10:42</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
