@@ -36,7 +36,7 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello, ${assigned_to}<br /><br />You&nbsp;have been invited to&nbsp;: <strong>${short_description}</strong><br /><br /><strong>Description :&nbsp;</strong><br />${description}</p>
+        <message_html><![CDATA[<p>Hello ${assigned_to},<br /><br />You&nbsp;have been invited to: ${short_description}<br /><br />Description<strong>:&nbsp;</strong>${description}</p>
 <p>Best Regards,</p>]]></message_html>
         <message_list/>
         <message_text/>
@@ -59,15 +59,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>548988d5db811300ccc3771c8c9619de</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>TF - Invitation Calendar</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sysevent_email_action_548988d5db811300ccc3771c8c9619de</sys_update_name>
-        <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-03-23 15:09:07</sys_updated_on>
+        <sys_updated_by>mdaghari</sys_updated_by>
+        <sys_updated_on>2018-04-19 13:44:20</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="tf.meeting_invitation">6fb084d1db811300ccc3771c8c961936</template>
         <type>vcalendar</type>

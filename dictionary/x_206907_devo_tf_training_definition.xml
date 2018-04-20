@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="8" type="collection">
+    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="13" type="collection">
         <element label="Approval Comments" max_length="400" name="approval_comments" type="string"/>
         <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Author" max_length="32" name="author" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Capacity" max_length="40" name="capacity" type="integer"/>
+        <element label="Capacity Max " max_length="40" name="capacity_max" type="integer"/>
         <element label="End Validation Date" max_length="40" name="end_validation_date" type="glide_date_time"/>
+        <element default="0" label="Inscriptions Nombre" max_length="40" name="inscriptions_nombre" type="integer"/>
         <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
         <element label="Publication Date" max_length="40" name="publication_date" read_only="true" type="glide_date_time"/>
         <element label="Schedule - End" max_length="40" name="schedule_end" type="glide_date_time"/>

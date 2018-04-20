@@ -38,12 +38,12 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello : ${author}</p>
+        <message_html><![CDATA[<p>Hello ${author},</p>
 <p>Your training module ${number} has been approved.</p>
 <p>Module Name: ${short_description}</p>
-<p>Comments : ${comments}</p>
-<p>Your module information is available to you on Service Portal : ${mail_script:TF_SP_module_def}</p>
-<p>Click here to view your Module definition: ${URI_REF}</p>
+<p>Comments: ${comments}</p>
+<p>Your module information is available to you on Service Portal: ${mail_script:TF_SP_module_def}</p>
+<p>To view your Module definition click here: ${URI_REF}</p>
 <p>&nbsp;Best Regards,</p>]]></message_html>
         <message_list/>
         <message_text/>
@@ -66,17 +66,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f2dc9f7cdbc11300ccc3771c8c96197a</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>TF - Module approved</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sysevent_email_action_f2dc9f7cdbc11300ccc3771c8c96197a</sys_update_name>
-        <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-12 11:45:13</sys_updated_on>
+        <sys_updated_by>mdaghari</sys_updated_by>
+        <sys_updated_on>2018-04-19 11:37:22</sys_updated_on>
         <sys_version>2</sys_version>
-        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <template/>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>

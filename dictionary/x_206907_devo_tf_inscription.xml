@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Inscription" max_length="40" name="x_206907_devo_tf_inscription" sizeclass="44" type="collection">
+    <element extends="task" label="Inscription" max_length="40" name="x_206907_devo_tf_inscription" sizeclass="37" type="collection">
         <element choice="1" label="Attendance" max_length="40" name="attendance" type="string">
             <choice>
                 <element label="Present" sequence="10" value="present"/>
@@ -10,12 +10,12 @@
         <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
         <element label="Content" max_length="4000" name="content" type="string"/>
         <element label="Group" max_length="32" name="group" reference="sys_user_group" type="reference"/>
-        <element default="0" label="Inscriptions Nombre " max_length="40" name="inscriptions_nombre" type="integer"/>
         <element label="Instance" max_length="32" name="instance" read_only="true" reference="x_206907_devo_tf_training_instance" type="reference"/>
         <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Sender" max_length="32" name="sender" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Subject" max_length="100" name="subject" type="string"/>
         <element label="Training" mandatory="true" max_length="32" name="training" reference="x_206907_devo_tf_training_definition" type="reference"/>
+        <element label="Training Capacity" max_length="40" name="training_capacity" type="integer"/>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
     </element>
 </database>

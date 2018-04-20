@@ -38,8 +38,8 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hello, ${author}</p>
-<p>Your training has been approved,</p>
+        <message_html><![CDATA[<p>Hello ${author},</p>
+<p>Your training has been approved.</p>
 <p>Training Title: ${short_description}</p>
 <p>Description: ${description}</p>
 <p>Approval comments :&nbsp; ${approval_comments}</p>
@@ -67,15 +67,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>42745660dbc11300ccc3771c8c9619ae</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>TF - Training approved</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sysevent_email_action_42745660dbc11300ccc3771c8c9619ae</sys_update_name>
-        <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-12 11:54:33</sys_updated_on>
+        <sys_updated_by>mdaghari</sys_updated_by>
+        <sys_updated_on>2018-04-19 12:43:38</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>

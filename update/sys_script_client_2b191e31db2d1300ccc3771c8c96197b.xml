@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>We want to check how many more inscriptions we can link to the training we choose.&#13;
+&#13;
+If none, we invite the user to choose another training.</description>
+        <field>training</field>
+        <global>true</global>
+        <messages/>
+        <name>TF - Calculate Training Capacity</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading) {
+		return;
+	}
+	if (newValue)
+		{
+		var ajax = new GlideAjax('GetCapacities');
+		ajax.addParam('sysparm_name','getcapacity');
+		ajax.addParam ('sysparm_training', g_form.getValue('training'));
+		ajax.getXML(autoPop);
+	}
+	function autoPop(response)
+	{
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		answer = Math.round(answer);
+		g_form.setValue('training_capacity', answer.toString());
+			
+			if(answer <= 0){
+				if(confirm("This Trainingt is full already. \n Please choose another.")){
+					g_form.setValue('training', null);
+				}
+			}
+			else{
+				alert("Beware, this Training can only accept " + answer );
+			}
+	}
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-04-19 09:46:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2b191e31db2d1300ccc3771c8c96197b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>TF - Calculate Training Capacity</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_script_client_2b191e31db2d1300ccc3771c8c96197b</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-19 12:09:11</sys_updated_on>
+        <table>x_206907_devo_tf_inscription</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

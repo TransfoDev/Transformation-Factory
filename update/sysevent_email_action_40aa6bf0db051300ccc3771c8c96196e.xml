@@ -41,9 +41,8 @@
         <message_html><![CDATA[<p>Hello ${owner},</p>
 <p>A module is waiting for your approval please :</p>
 <p>Module Name: ${short_description}<br /><br />Description: ${description}</p>
-<p>Your module information is available to you&nbsp;on Service Portal&nbsp;</p>
-<p>${mail_script:TF_SP_module_def}</p>
-<p>Click here to view your Module definition: ${URI_REF}</p>
+<p>Your module information is available to you&nbsp;on Service Portal: ${mail_script:TF_SP_module_def}</p>
+<p>To view your Module definition click here&nbsp;: ${URI_REF}</p>
 <p>Best Regards,</p>]]></message_html>
         <message_list/>
         <message_text/>
@@ -58,7 +57,7 @@
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>The module : ${short_description} is waiting for approval</subject>
+        <subject>The module: ${short_description} is waiting for approval</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>anoufel</sys_created_by>
@@ -66,15 +65,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>40aa6bf0db051300ccc3771c8c96196e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>TF - Module waiting for approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sysevent_email_action_40aa6bf0db051300ccc3771c8c96196e</sys_update_name>
-        <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-12 12:12:45</sys_updated_on>
+        <sys_updated_by>mdaghari</sys_updated_by>
+        <sys_updated_on>2018-04-19 11:50:04</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>

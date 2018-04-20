@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_206907_devo_tf.m2m_module_def_training_def_user" name="x_206907_devo_tf.m2m_module_def_training_def_user">97f9c888dbc11300ccc3771c8c961929</contains>
+        <role display_value="x_206907_devo_tf.tf_creator" name="x_206907_devo_tf.tf_creator">f28f804cdbc11300ccc3771c8c961977</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-04-18 09:48:38</sys_created_on>
+        <sys_id>28121de5db611300ccc3771c8c961918</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_206907_devo_tf.m2m_module_def_training_def_user.x_206907_devo_tf.tf_creator</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_user_role_contains_28121de5db611300ccc3771c8c961918</sys_update_name>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-04-18 09:48:38</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

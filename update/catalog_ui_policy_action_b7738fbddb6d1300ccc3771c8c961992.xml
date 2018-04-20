@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Training Registration">754db98bdb011300ccc3771c8c961944</catalog_item>
+        <catalog_variable>IO:781143f9db6d1300ccc3771c8c961939</catalog_variable>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-04-19 12:42:51</sys_created_on>
+        <sys_id>b7738fbddb6d1300ccc3771c8c961992</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Training_Capacity</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_b7738fbddb6d1300ccc3771c8c961992</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-19 12:42:51</sys_updated_on>
+        <table/>
+        <ui_policy display_value="TF_Make Training capacity read only">3aa2c7bddb6d1300ccc3771c8c961948</ui_policy>
+        <variable>Training_Capacity</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_206907_devo_tf.HTMLSanitizerConfig</api_name>
+        <client_callable>false</client_callable>
+        <description>The HTML sanitizer works by checking the built-in white lists for markup that you always want to preserve. The sanitizer provides a script include that you can use to modify the built-in white list. You can also add items to the black list, which overrides the white list.&#13;
+&#13;
+Configuration Format: There are two JavaScript Object's HTML_WHITELIST and HTML_BLACKLIST which both have the same format as below.&#13;
+&#13;
+    HTML_XXXXLIST : {&#13;
+        globalAttributes : { 		 &#13;
+            attribute:[attribute-name1,...],&#13;
+            attributeValuePattern:{ attribute-name2:attribute-value-regex-pattern,...}		  &#13;
+        },&#13;
+        &lt;html-element-name&gt; : {&#13;
+            // Same as Above&#13;
+        },&#13;
+        - -&#13;
+        - -&#13;
+    }&#13;
+&#13;
+globalAttributes: Note that this is not an element by itself. The attribute/attributeValuePattern under this are applicable globally for all the html elements.&#13;
+attribute: This is a coma separated list of attributes.&#13;
+attributeValuePattern: This is a dictionary of attribute to attribute-value-regex-pattern pairs. The attribute-value-regex-pattern is a regular expression which has to match the attribute value.&#13;
+&#13;
+NOTE1: Please review built-In WhiteList Configuration, before this Script-Include is edited.&#13;
+NOTE2: 'class' is a javascript reserved word. So if needed, use 'Class'(Uppcase C) instead.&#13;
+&#13;
+Example:&#13;
+    HTML_WHITELIST : {&#13;
+        globalAttributes: {&#13;
+            attribute:["id", "name"],&#13;
+            attributeValuePattern:{Class:".*"}&#13;
+        },&#13;
+        img: {&#13;
+            attribute:["style", "align"],&#13;
+            attributeValuePattern:{src:".*jpeg"}&#13;
+        },	&#13;
+        iframe:{},&#13;
+    }</description>
+        <name>HTMLSanitizerConfig</name>
+        <script><![CDATA[var HTMLSanitizerConfig = Class.create();
+HTMLSanitizerConfig.prototype = {
+	initialize: function() {
+	},
+	
+	HTML_WHITELIST : {
+		globalAttributes: {
+			attribute:[],
+			attributeValuePattern:{}
+		},
+			
+	//KAS : starting here
+    embed:{attribute:["src","type","allowfullscreen","allowscriptacces","plugnspage"]},
+    object:{attribute:["classid","codebase","width","height"]},
+    param:{attribute:["name","value"]},
+	video:{attribute:["controls","width","height","autoplay", "loop", "muted", "poster", "preload", "src"],},
+    source:{attribute:["src","srcset","media","type","sizes"],},
+	picture:{attribute:["class"],},
+	a:{attribute:["title","class","href","aria-label"],},
+	iframe:{attribute:["width","height","src","frameborder","allow","allowfullscreen"],}
+	//KAS : stops here
+	
+	},
+
+	
+	HTML_BLACKLIST : {
+		globalAttributes: {},
+	},
+	
+	getWhiteList : function() {
+		return this.HTML_WHITELIST;
+	},
+	
+	getBlackList : function() {
+		return this.HTML_BLACKLIST;
+	},
+	
+	type: 'HTMLSanitizerConfig'
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>anoufel</sys_created_by>
+        <sys_created_on>2018-04-20 15:31:09</sys_created_on>
+        <sys_id>e5a3b456dbe11300ccc3771c8c961977</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>HTMLSanitizerConfig</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_script_include_e5a3b456dbe11300ccc3771c8c961977</sys_update_name>
+        <sys_updated_by>anoufel</sys_updated_by>
+        <sys_updated_on>2018-04-20 15:31:09</sys_updated_on>
+    </sys_script_include>
+</record_update>

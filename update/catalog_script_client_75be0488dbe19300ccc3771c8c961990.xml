@@ -9,7 +9,7 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Training Registration">754db98bdb011300ccc3771c8c961944</cat_item>
-        <cat_variable/>
+        <cat_variable>IO:e111824fdb011300ccc3771c8c9619b4</cat_variable>
         <condition/>
         <description/>
         <field/>
@@ -17,34 +17,41 @@
         <messages/>
         <name>TF calcul capacity </name>
         <order/>
-        <script><![CDATA[function onSubmit() {
-	//Type appropriate comment here, and begin script below
-	var ajax = new GlideAjax('GetCapacities');
-	ajax.addParam('sysparm_name','getcapacity');
-	ajax.addParam ('training', g_form.getValue('training'));
-	ajax.getXML(autoPop);
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading) {
+		return;
+	}
+	if (newValue)
+		{
+		var ajax = new GlideAjax('GetCapacities');
+		ajax.addParam('sysparm_name','getcapacity');
+		ajax.addParam ('sysparm_training', g_form.getValue('training'));
+		ajax.getXML(autoPop);
+	}
 	function autoPop(response)
 	{
 		var answer = response.responseXML.documentElement.getAttribute("answer");
-		var cpt=g_form.getValue('inscriptions_nombre');
-		if (answer!=cpt){
-			cpt= answer-cpt;
-			g_form.setValue("inscriptions_nombre", cpt);
-			g_form.addInfoMessage(" the user is registered ");
-		}
-		else
-			{
-			g_form.addInfoMessage("The maximum number of places reached ");
-		    }
+		answer = Math.round(answer);
+		g_form.setValue('Training_Capacity', answer.toString());
+			
+			if(answer <= 0){
+				if(confirm("This Trainingt is full already. \n Please choose another.")){
+					g_form.setValue('u_training', null);
+				}
+			}
+			else{
+				alert("Beware, this Training can only accept " + answer );
+			}
 	}
-}]]></script>
+}
+]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>anoufel</sys_created_by>
         <sys_created_on>2018-04-13 13:05:27</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>75be0488dbe19300ccc3771c8c961990</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>TF calcul capacity </sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -52,10 +59,10 @@
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>catalog_script_client_75be0488dbe19300ccc3771c8c961990</sys_update_name>
         <sys_updated_by>anoufel</sys_updated_by>
-        <sys_updated_on>2018-04-13 14:55:12</sys_updated_on>
+        <sys_updated_on>2018-04-19 12:49:05</sys_updated_on>
         <table/>
-        <type>onSubmit</type>
-        <ui_type>0</ui_type>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
         <variable_set/>
         <view/>
     </catalog_script_client>

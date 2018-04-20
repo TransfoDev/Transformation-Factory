@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_206907_devo_tf.TF_countGuests</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>TF_countGuests</name>
+        <script><![CDATA[var TF_countGuests = Class.create();
+TF_countGuests.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+TFCountGuest : function(){
+	try{
+		var EventInfo = {};
+		var eventValue = this.getParameter('sysparm_event');
+		
+		gs.log("event : " + eventValue,"TVA");
+		
+		if(eventValue != ''){
+			var grEvt = new GlideRecord('x_206907_devo_tf_events_list');
+			grEvt.addQuery('sys_id',eventValue);
+			grEvt.query();
+			
+			while(grEvt.next()){
+				var cap = grEvt.getValue("capacity") - grEvt.getValue("invitations");
+				gs.log('Capacity : ' + cap,'TVA');
+				EventInfo.u_capacity = cap;
+			}
+		}
+		else{
+			var value = "";
+			EventInfo.u_capacity = value;
+		}
+		
+		var ESJSON = JSON;
+		return new ESJSON().encode(EventInfo);
+	}
+	catch(e){
+		gs.log('Error in Script Include <TF_countGuests - TFCountGuest>: ' + e);
+	}
+},
+    type: 'TF_countGuests'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-16 12:59:24</sys_created_on>
+        <sys_id>2d4727b0dbe11300ccc3771c8c96196e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TF_countGuests</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_script_include_2d4727b0dbe11300ccc3771c8c96196e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-16 12:59:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

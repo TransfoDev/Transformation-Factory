@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Training Instance" max_length="40" name="x_206907_devo_tf_training_instance" sizeclass="25" type="collection">
+    <element extends="task" label="Training Instance" max_length="40" name="x_206907_devo_tf_training_instance" sizeclass="34" type="collection">
         <element label="Author" max_length="32" name="author" reference="sys_user" type="reference"/>
         <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
         <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>

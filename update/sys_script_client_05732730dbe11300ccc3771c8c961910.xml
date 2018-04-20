@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>event</field>
+        <global>true</global>
+        <messages/>
+        <name>TF - Event Capacity Calc</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading || newValue === '') {
+		return;
+	}
+	
+	var ga = new GlideAjax('x_206907_devo_tf.TF_countGuests');
+	ga.addParam("sysparm_name","TFCountGuest");
+	ga.addParam("sysparm_event",newValue);
+	ga.getXML(guestCountAjax);
+	
+	function guestCountAjax(response){
+		var answer=response.responseXML.documentElement.getAttribute("answer");
+		alert("answer : " + answer);
+		
+		try {
+		if(answer != ''){
+			var EventInfo = JSON.parse(answer);
+			var cap = EventInfo.u_capacity;
+			
+			alert('Capacity : ' + cap);
+			
+			g_form.setValue('event_capacity', cap);
+			g_form.addDecoration('event_capacity','icon-alert','Check Event Capacity before Submitting','color-red');
+			
+			if(cap==0){
+				if(confirm('This Event is full already. \n Please choose another')){
+					g_form.clearValue('event');
+				}
+			}
+			else{
+				alert("Beware, this event can only accept " + cap + " more guests. Adapt your guests list in consideration");
+			}
+		}
+		}catch(e){
+			jslog('Error in Catalog Client Script <Fill user fields (onLoad)>: ' + e);
+		}
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-16 12:44:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>05732730dbe11300ccc3771c8c961910</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>TF - Event Capacity Calc</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sys_script_client_05732730dbe11300ccc3771c8c961910</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-16 13:00:14</sys_updated_on>
+        <table>x_206907_devo_tf_events_registrations</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
