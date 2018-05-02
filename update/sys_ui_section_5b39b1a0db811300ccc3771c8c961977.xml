@@ -4,98 +4,84 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number</element>
             <position>0</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>fc0ab5e0db811300ccc3771c8c961917</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>45e5eb8bdba11300ccc3771c8c96199e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>guest_list</element>
             <position>1</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>700ab5e0db811300ccc3771c8c961918</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>c9e5eb8bdba11300ccc3771c8c96199e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>group_list</element>
             <position>2</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>f00ab5e0db811300ccc3771c8c961918</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>4de5eb8bdba11300ccc3771c8c96199e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>3</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>740ab5e0db811300ccc3771c8c961918</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>cde5eb8bdba11300ccc3771c8c96199e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>event</element>
             <position>4</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>f40ab5e0db811300ccc3771c8c961918</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>41e5eb8bdba11300ccc3771c8c96199f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>event_capacity</element>
             <position>5</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>780ab5e0db811300ccc3771c8c961918</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-04-23 12:25:22</sys_created_on>
+            <sys_id>c1e5eb8bdba11300ccc3771c8c96199f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>number_of_guest</element>
-            <position>6</position>
-            <sys_created_by>anoufel</sys_created_by>
-            <sys_created_on>2018-03-21 13:37:50</sys_created_on>
-            <sys_id>f80ab5e0db811300ccc3771c8c961918</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_events_registrations" sys_domain="global" view="Default view">5b39b1a0db811300ccc3771c8c961977</sys_ui_section>
-            <sys_updated_by>anoufel</sys_updated_by>
-            <sys_updated_on>2018-03-21 13:37:50</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-04-23 12:25:22</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

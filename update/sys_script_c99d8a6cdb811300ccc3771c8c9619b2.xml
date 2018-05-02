@@ -85,11 +85,11 @@
 
 		//We then Check if the event is not at maximum capacity.
 		//If our guests list contains too much users, only the first ones will be added (alphabetical order)
-		var gr2 = new GlideRecord("x_206907_devo_tf_events_list");
-		gr2.addQuery('sys_id', current.event.sys_id);
-		gr2.query();
-		while(gr2.next()){
-			if (gr2.invitations >= gr2.capacity){
+// 		var gr2 = new GlideRecord("x_206907_devo_tf_events_list");
+// 		gr2.addQuery('sys_id', current.event.sys_id);
+// 		gr2.query();
+// 		while(gr2.next()){
+			if (current.event_capacity == 0){
 				gs.addErrorMessage("The user " + testedUser.name +" was not invited to the event : " + gr2.short_description + ". The event is currently at full occupancy.");
 				continue;
 			}
@@ -110,12 +110,9 @@
 				var invitation = gr.insert();
 				current.invitation = invitation;
 
-				gr2.invitations = gr2.invitations + 1;	
-				gr2.update();
-
 				gs.addInfoMessage("The user " + testedUser.name +" has been invited to the event : " + gr2.short_description + ".");
 			}
-		}
+// 		}
 	}
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -124,7 +121,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c99d8a6cdb811300ccc3771c8c9619b2</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>TF - Create Invitation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
@@ -132,7 +129,7 @@
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_c99d8a6cdb811300ccc3771c8c9619b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-27 15:14:15</sys_updated_on>
+        <sys_updated_on>2018-04-23 14:53:54</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

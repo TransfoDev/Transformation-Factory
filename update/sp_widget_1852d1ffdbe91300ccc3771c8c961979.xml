@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel{
+margin-bottom:0px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13), 0 3px 6px rgba(0,0,0,0.20);
+}
+#rec {
+width: 10px;
+height: 55px;
+
+  float:right!important;
+  display: inline;
+  top:-30px;
+  margin-top:-10px;
+  margin-right:-16px;
+}
+.text-banner{
+//font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
+	font-weight:200;
+  //overflow-wrap: break-word; 
+}
+.tickets-tf{
+  //position: absolute;
+    width: 100vw;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    margin-left: calc(-50vw + 50%);
+}
+.wb_Text1{
+	position:absolute;
+  left:100px;
+  top:13px;
+  width:100vw;
+  height:16px;
+  z-index:2;
+  text-align:left;"
+}
+/*
+@media only screen and (max-width: 767px) {
+    //phones
+  .text-banner{
+    overflow-wrap: break-word; 
+  	font-size:100%;
+  }
+}
+*/</css>
+        <data_table>sp_instance_vlist</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,color,glyph,filter,display_field,sp_page,table,order_direction,maximum_entries,order_by</field_list>
+        <has_preview>false</has_preview>
+        <id>news-ticker-single-line-2</id>
+        <internal>false</internal>
+        <link/>
+        <name>News Ticker Single Line 2</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[// populate the 'data' object
+
+/* --Settings-- */
+data.interval = 5000;
+data.direction = 'up'; // 'up' or 'down'
+//data.line_height =70;
+data.line_height = 50;
+data.num_lines = 1;
+
+data.height = (data.line_height - 1) * data.num_lines;
+data.sp_page = options.sp_page_dv;
+data.list = [];
+
+var gr = new GlideRecordSecure(options.table);
+//KAS : adding valid_to date as a filter
+//gr.addQuery('valid_to','>=',(new GlideDate()).getLocalDate().getValue());
+if (options.filter)
+	gr.addEncodedQuery(options.filter);
+if (options.order_direction == "asc")
+	gr.orderBy(options.order_by);
+else
+	gr.orderByDesc(options.order_by);
+gr.setLimit(options.maximum_entries);
+gr.query();
+
+while (gr.next()) {
+	var record = {};
+	record.sys_id = gr.sys_id.getDisplayValue();
+	if (options.image_field) {
+		record.image_field = gr.getDisplayValue(options.image_field);
+		if (!record.image_field)
+			record.image_field = "/noimage.pngx";
+	}
+
+	if (options.display_field)
+		record.display_field = gr.getDisplayValue(options.display_field);
+
+	//Get current user langage
+	/*var currentUser = gs.getUserID();
+	var currentUser_lg = new GlideRecord('sys_user');
+	currentUser_lg.addQuery('sys_id', gs.getUser().getID());
+	currentUser_lg.query();*/
+	
+	// get the KB category to use for the HTML displaying
+	record.kb_category = gr.getValue("kb_category")
+
+	record.url = "";
+	if (data.sp_page)
+		record.url = "?id="+data.sp_page+"&table="+data.table+"&sys_id="+record.sys_id+"&view=sp";
+
+	data.list.push(record);
+
+}
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>rfrancoise</sys_created_by>
+        <sys_created_on>2018-04-25 09:36:03</sys_created_on>
+        <sys_id>1852d1ffdbe91300ccc3771c8c961979</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>News Ticker Single Line 2</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_widget_1852d1ffdbe91300ccc3771c8c961979</sys_update_name>
+        <sys_updated_by>rfrancoise</sys_updated_by>
+        <sys_updated_on>2018-04-25 09:59:47</sys_updated_on>
+        <template><![CDATA[<div class="tickets-tf">
+
+  <div class="panel panel-{{options.color}}" style="margin:auto;background:rgba(255,255,255 ,0)!important;border:0px;">
+
+    <div sp-ticker style="background:rgba(255,255,255 ,0)!important;" timing="{{data.interval}}" direction="{{data.direction}}" class="list-group">
+      <a ng-href="{{item.url}}" ng-repeat="item in data.list" class="list-group-item">
+
+        <!-- add the rectangle on the right depending of the KB category -->
+        <!-- <span ng-if="item.kb_category== item.category1" class="pull-right" id="rec" style="background-color:#23b8b0;"></span>
+<span ng-if="item.kb_category==item.category2" class="pull-right" id="rec" style="background-color:#f78211;"></span>-->
+        <!-- Add icons on the left, depending of the KB category -->
+        <span class="pull-left m-r">
+          <div id="wb_Image1" style="position:absolute;left:0px;top:-5px;width:40px;height:40px;z-index:2;"> 
+            <img src="golive.jpg" width="55" height="55"/>
+          </div>
+        </span>
+        <br>
+        <div id="wb_Text1" class="wb_Text1">
+          <!--<div id="wb_Text1" style="position:absolute;left:100px;top:13px;width:100px;height:16px;z-index:2;text-align:left;">-->
+          <span style="font-size:18px;">
+            <!-- Display KB articles about "News" and "Alert" categories, color changes depending of the category -->
+            <div> 
+              <div class="text-banner" style="display:inline;color:#005BBB;">
+                {{::item.display_field}}
+              </div> 
+            </div>
+          </span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <style>    
+    [sp-ticker].active {
+      display: block;
+      height: {{data.height}}px;
+      overflow-y: hidden;
+    }
+    [sp-ticker] a {
+      height: {{data.line_height}}px;
+      overflow: hidden;
+      transition: opacity 0.5s ease, margin 0.5s ease;
+      white-space: nowrap;
+    }
+    [sp-ticker] a.fade-out {
+      opacity: 0;
+    }
+    [sp-ticker] a.minus-margin-top {
+      margin-top: -{{data.line_height}}px;
+    }
+  </style>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" sizeclass="23" type="collection">
+    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" sizeclass="21" type="collection">
         <element label="Approval Comments" max_length="4000" name="approval_comments" type="string"/>
         <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Author" max_length="32" name="author" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
