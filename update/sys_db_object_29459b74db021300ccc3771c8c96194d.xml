@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_db_object">
     <sys_db_object action="INSERT_OR_UPDATE">
-        <access>public</access>
-        <actions_access>false</actions_access>
-        <alter_access>false</alter_access>
-        <client_scripts_access>false</client_scripts_access>
+        <access/>
+        <actions_access>true</actions_access>
+        <alter_access>true</alter_access>
+        <client_scripts_access>true</client_scripts_access>
         <configuration_access>false</configuration_access>
-        <create_access>false</create_access>
-        <create_access_controls>true</create_access_controls>
+        <create_access>true</create_access>
+        <create_access_controls>false</create_access_controls>
         <delete_access>false</delete_access>
         <extension_model/>
         <is_extendable>false</is_extendable>
-        <label>Contained Modules</label>
+        <label>Devo Tf M2m Module Def Training Def</label>
         <live_feed_enabled>false</live_feed_enabled>
         <name>x_206907_devo_tf_m2m_module_def_training_def</name>
         <number_ref/>
@@ -21,19 +21,19 @@
         <sys_class_code/>
         <sys_class_name>sys_db_object</sys_class_name>
         <sys_class_path/>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-03-19 16:11:26</sys_created_on>
-        <sys_id>0d994c88dbc11300ccc3771c8c9619be</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Contained Modules</sys_name>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-05-11 07:57:49</sys_created_on>
+        <sys_id>29459b74db021300ccc3771c8c96194d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Devo Tf M2m Module Def Training Def</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
-        <sys_update_name>sys_db_object_0d994c88dbc11300ccc3771c8c9619be</sys_update_name>
+        <sys_update_name>sys_db_object_29459b74db021300ccc3771c8c96194d</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-04-23 12:02:41</sys_updated_on>
-        <update_access>false</update_access>
-        <user_role display_value="x_206907_devo_tf.m2m_module_def_training_def_user" name="x_206907_devo_tf.m2m_module_def_training_def_user">97f9c888dbc11300ccc3771c8c961929</user_role>
+        <sys_updated_on>2018-05-11 07:57:49</sys_updated_on>
+        <update_access>true</update_access>
+        <user_role/>
         <ws_access>true</ws_access>
     </sys_db_object>
 </record_update>

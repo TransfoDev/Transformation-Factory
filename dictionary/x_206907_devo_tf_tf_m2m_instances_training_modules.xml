@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element label="TF M2M Instances Training Modules" max_length="40" name="x_206907_devo_tf_tf_m2m_instances_training_modules" type="collection">
-        <element label="Module Instance" max_length="32" name="module_instance" reference="x_206907_devo_tf_module_instance" type="reference"/>
+        <element display="true" label="Module Instance" max_length="32" name="module_instance" reference="x_206907_devo_tf_module_instance" type="reference"/>
         <element label="Training Instance" max_length="32" name="training_instance" reference="x_206907_devo_tf_training_instance" type="reference"/>
         <index name="index">
             <element name="training_instance"/>

@@ -6,13 +6,8 @@
         <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
         <column_label>Module Definition</column_label>
@@ -52,17 +47,17 @@
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-03-19 16:11:26</sys_created_on>
-        <sys_id>2d99c488dbc11300ccc3771c8c9619af</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-05-11 07:57:50</sys_created_on>
+        <sys_id>654597b4db021300ccc3771c8c961984</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>Module Definition</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_dictionary_x_206907_devo_tf_m2m_module_def_training_def_module_definition</sys_update_name>
         <sys_updated_by>ccouble</sys_updated_by>
-        <sys_updated_on>2018-04-25 09:17:24</sys_updated_on>
+        <sys_updated_on>2018-05-11 07:57:50</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

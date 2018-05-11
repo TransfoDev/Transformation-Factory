@@ -11,16 +11,16 @@
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-03-19 16:11:27</sys_created_on>
-        <sys_id>a7f940c8dbc11300ccc3771c8c961926</sys_id>
+        <sys_created_by>ccouble</sys_created_by>
+        <sys_created_on>2018-05-11 07:57:49</sys_created_on>
+        <sys_id>ed4597b4db021300ccc3771c8c96197e</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_206907_devo_tf_m2m_module_def_training_def</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
-        <sys_update_name>ua_table_licensing_config_a7f940c8dbc11300ccc3771c8c961926</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-19 16:11:27</sys_updated_on>
+        <sys_update_name>ua_table_licensing_config_ed4597b4db021300ccc3771c8c96197e</sys_update_name>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-05-11 07:57:49</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>

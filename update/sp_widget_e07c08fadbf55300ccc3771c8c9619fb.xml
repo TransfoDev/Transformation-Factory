@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;	
+		c.getMaxShownLabel = function(maxEntries, totalCount) {
+		return "${First [0] of [1] shown}".replace('[0]', maxEntries).replace('[1]', totalCount);
+	};	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.list-group-item {
+  //padding: 10;
+  //border: 1px solid;
+  //margin-bottom: 10px;
+}
+
+.progress-bar, .progress-bar-inner, .progress-bar-innerF{
+  width:100%;
+  height:9px;
+  border-radius:4px;
+}
+
+.progress-bar {
+  background:#BDC3C7;
+  margin-top:5px;
+}
+
+.progress-bar-inner {
+  background:#4efc27;
+}
+
+.progress-bar-innerF{
+  background:#f72532;
+}
+a {
+  color: #428bca;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tf-my-exam-ins</id>
+        <internal>false</internal>
+        <link/>
+        <name>TF - My Exams</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.articles = [];
+	data.widgetTitle = options.title || gs.getMessage("My exams");
+	var user = gs.getUserID();
+	var z =new GlideRecord('exam_score');
+	z.addQuery("user", user);
+	z.query();
+	data.totalExamCount = z.getRowCount();
+	console.log(data.totalExamCount)
+	var count = 0;
+	var today = new GlideDateTime();
+	while (z.next() && count < options.max_number){
+		
+		var a = {};
+		$sp.getRecordValues(a, z, 'sys_id,percent');
+	$sp.getRecordDisplayValues(a, z, 'exam,state,pass_fail');
+
+		var note = new GlideRecord('exam_response');
+		note.addQuery("score.user", user)
+		note.addQuery('score.exam', z.exam.sys_id);
+		note.query();
+		if (note.next())
+			{
+				
+				var all ={}
+			 var all = note.getRowCount()	;
+			var good = new GlideRecord('exam_response');
+		good.addQuery("score.user", user)
+		good.addQuery('score.exam', z.exam.sys_id);
+	 good.addQuery('answer.correct', true)
+		good.query();
+		if (good.next())
+			{
+			 var bon = good.getRowCount();
+						
+			}
+				else
+					{
+						bon = '0';
+					}
+		
+			}	
+		a.result = 'good answer: '+ bon +'/' + all;
+	data.articles.push(a);
+		count++
+	}
+//count completed trainings
+	var y =new GlideAggregate('exam_score');
+	y.addQuery("user", user);
+	y.addQuery('state', 'Complete');//Selecting Completed
+	y.query();
+	if (y.next())
+		data.completedCount = y.getAggregate('COUNT');
+	
+
+})()
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>CVIGNERON</sys_created_by>
+        <sys_created_on>2018-05-04 12:12:33</sys_created_on>
+        <sys_id>e07c08fadbf55300ccc3771c8c9619fb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>TF - My Exams</sys_name>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_widget_e07c08fadbf55300ccc3771c8c9619fb</sys_update_name>
+        <sys_updated_by>CVIGNERON</sys_updated_by>
+        <sys_updated_on>2018-05-07 08:59:17</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{::c.options.color}} b">
+  <div class="panel-heading">
+    <h4 class="panel-title">{{::data.widgetTitle}}</h4>
+  </div>  
+  <div class="list-group">
+  <div class="list-group-item" ng-repeat="a in data.articles">
+   <a href="?id=exams&sysparm_id={{a.sys_id}}">{{a.exam}}</a>  
+    <a class="pull-right" ng-if="a.state=='Complete'" ng-if="a.pass_fail=='Pass'" style="color:#4efc27">  {{a.pass_fail}} </a>
+      <a class="pull-right" ng-if="a.state=='Complete'" ng-if="a.pass_fail=='Fail'" style="color:#f72532">  {{a.pass_fail}} </a>
+     <div class="progress-bar">
+     <div class="progress-bar-inner" ng-if="a.pass_fail=='Pass'" ng-style="{width: a.percent + '%'}"></div>
+        <div class="progress-bar-innerF" ng-if="a.pass_fail=='Fail'" ng-style="{width: a.percent + '%'}"></div>
+       
+      </div><!--End progress bar-->      
+    
+          <div class="align" >
+        <small>
+          <span ng-if="a.state=='Complete'" class="pull-right" >{{a.result}}</span>
+         <span>{{a.state}}</span>
+           
+    
+        </small>          
+         </div><!--End list-group-item-->  
+  </div><!--End list-group--> 
+  <div class="panel-footer" ng-if="::(c.data.totalExamCount > c.data.articles.length)" >
+    <h2 class="h4 panel-title">{{c.getMaxShownLabel(c.options.max_number, c.data.totalExamCount)}} 
+      <a class="pull-right" href="tf?id=exams_list">${View all}</a>
+    </h2>
+  </div>
+  <div ng-if="data.totalExamCount == 0" class="panel-body ng-scope">
+    ${You have no active exam} <a ng-if="data.completedCount >= 0" class="pull-right" href="take_exam.do">${View completed}</a>
+  </div>
+         </div><!--End panel-->  
+
+]]></template>
+    </sp_widget>
+</record_update>

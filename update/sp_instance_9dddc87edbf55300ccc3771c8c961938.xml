@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">d30317c9db011300ccc3771c8c961907</sp_column>
+        <sp_widget display_value="TF - My Exams">e07c08fadbf55300ccc3771c8c9619fb</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>CVIGNERON</sys_created_by>
+        <sys_created_on>2018-05-04 12:18:36</sys_created_on>
+        <sys_id>9dddc87edbf55300ccc3771c8c961938</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
+        <sys_update_name>sp_instance_9dddc87edbf55300ccc3771c8c961938</sys_update_name>
+        <sys_updated_by>CVIGNERON</sys_updated_by>
+        <sys_updated_on>2018-05-04 12:25:37</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"max_number": {
+		"value": 2,
+		"displayValue": "2"
+	},
+	"kb_category": {
+		"value": "",
+		"displayValue": ""
+	},
+	"maxRecords": {
+		"value": 2,
+		"displayValue": "2"
+	},
+	"widgetTitle": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=9dddc87edbf55300ccc3771c8c961938"/>
+</record_update>
