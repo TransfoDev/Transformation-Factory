@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Inscription" max_length="40" name="x_206907_devo_tf_inscription" sizeclass="59" type="collection">
+    <element extends="task" label="Inscription" max_length="40" name="x_206907_devo_tf_inscription" sizeclass="60" type="collection">
         <element choice="1" label="Attendance" max_length="40" name="attendance" type="string">
             <choice>
                 <element label="Present" sequence="10" value="present"/>
