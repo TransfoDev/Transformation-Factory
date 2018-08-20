@@ -8,11 +8,10 @@
 	//update breadcrumbs
 	$rootScope.$broadcast('sp.update.breadcrumbs', c.data.breadcrumbs);
 	//permit content to be rendered in html
-	$scope.data.u_content = $sce.trustAsHtml($scope.data.u_content);
-
+	$scope.data.content = $sce.trustAsHtml($scope.data.content);
+//	$scope.data.personal_notes = $sce.trustAsHtml($scope.data.personal_notes);
 	//fill in notes field with previous input
-	$scope.notes = $scope.data.u_personal_notes;
-
+$scope.notes = $scope.data.personal_notes;
 	//Hide button if input is invalid
 	c.checkValid = function(){
 		if ($( '#my_notes' ).hasClass( 'ng-invalid' )){
@@ -32,27 +31,29 @@
 				 window.location.href = "/tf?id=tf_modins&sys_id="+$scope.data.idmodule;
 				 },1500);
 		
-			
 	}
 			c.data.action = undefined;
 			spUtil.update($scope);
-			$scope.data.u_content = $sce.trustAsHtml($scope.data.u_content);
+			$scope.data.content = $sce.trustAsHtml($scope.data.content);
 		//	window.location.href = "/tf?id=tf_modins&sys_id="+$scope.data.sys_id;
 	
 		});
 
-		
 	}	;
 	c.saveNotes = function(action){
 		c.data.action = action;
 			c.data.notes = $scope.notes;
-		c.server.update().then(function() {
-			c.data.action = undefined;
+				description: c.notes;
+		//c.server.update();
+		
+	c.server.update().then(function() {
+		c.data.action = undefined;
 			spUtil.update($scope);
 			spUtil.addInfoMessage('Personal notes saved');
+;
 			
 			
-		});
+		});  
 		
 	}	;
 
@@ -89,7 +90,11 @@
 
 .ng-invalid{
   color : red;
-}</css>
+}
+
+textarea { 
+    resize: both; 
+} </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -106,11 +111,32 @@
         <script><![CDATA[(function() {
 	data.action = "";
 	var tf_module = $sp.getParameter('sys_id');
+	
+	
+	
+	data.tasks = [];
+
+var personalTaskGR = new GlideRecord("x_206907_devo_tf_module_instance");
+personalTaskGR.addQuery("sys_id", tf_module);
+personalTaskGR.query();
+
+while(personalTaskGR.next()) {
+	var task = {};
+	
+ //task.description2 =personalTaskGR.personal_notes.getJournalEntry(-1) + "\n" ;
+	//task.description2 =personalTaskGR.personal_notes ;
+		task.description = personalTaskGR.getValue("personal_notes");
+ }
+	
+ 
+	data.tasks.push(task);
+
+	
 	var z = new GlideRecord('x_206907_devo_tf_module_instance');
 	z.get(tf_module);
 	var user = gs.getUserID();
 //	var a = {};
-	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,content,number_of_available_places,personal_notes,support');
+	$sp.getRecordValues(data, z, 'number,short_description,description,sys_id,content,number_of_available_places,personal_notes,work_notes,support');
 	data.status = z.getValue('state')
  	//data.a = data.status;
 	$sp.getRecordDisplayValues(data, z, 'instructor,training_type,support');
@@ -118,10 +144,15 @@
 	//data.sys_id = "${RP.getParameterValue('moduleid')}";
 	data.state = z.state.getDisplayValue();
 		data.sys_id = z.sys_id;
-//data.support = z.support.getDisplayValue();
-//	data.supportlink = z.getValue('support');
-//data.supporttitle =  z.getValue('support.short_description');
+data.support = z.material.getDisplayValue();
+data.supportlink = z.getValue('material');
+	//data.supporttitle =  z.getValue('material.short_description');
+		data.supporttitle =  z.material.short_description.getDisplayValue();
   data.title = z.short_description.getDisplayValue();
+console.log("test"+ data.content)
+	
+	
+	
 	if(z.schedule)
 		data.schedule = z.schedule.getDisplayValue();
 if(z.start){
@@ -140,6 +171,7 @@ var startTime = GlideDateTime().getDate().getValue();
     var endTime = z.end.getDisplayValue();
 		var sEndTimeArray = endTime.split(' ');
 		data.end_time = sEndTimeArray[1];
+		
 	}
 
 	data.duration = z.duration_resolution.getDisplayValue();
@@ -151,6 +183,8 @@ var startTime = GlideDateTime().getDate().getValue();
 	data.breadcrumbs.unshift({label: data.allmyti, url: '?id=tf_allmyti'});
 
 
+	
+
 	if (!input){
 		return;
 	}
@@ -161,10 +195,17 @@ var startTime = GlideDateTime().getDate().getValue();
 		// KAS : personal notes input
 		else if (input.action == 'saveNotes'){
 			z.personal_notes = input.notes;
+		
 		}
 		
-		z.update();
+	z.update();
 	}
+	
+	
+	
+	/////
+	
+	///////////////
 })()
 
 ]]></script>
@@ -173,20 +214,20 @@ var startTime = GlideDateTime().getDate().getValue();
         <sys_created_by>ccouble</sys_created_by>
         <sys_created_on>2018-03-22 15:38:51</sys_created_on>
         <sys_id>574f1330db051300ccc3771c8c961951</sys_id>
-        <sys_mod_count>123</sys_mod_count>
+        <sys_mod_count>292</sys_mod_count>
         <sys_name>My module details</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_574f1330db051300ccc3771c8c961951</sys_update_name>
-        <sys_updated_by>CVIGNERON</sys_updated_by>
-        <sys_updated_on>2018-05-07 08:06:14</sys_updated_on>
+        <sys_updated_by>c.vigneron</sys_updated_by>
+        <sys_updated_on>2018-07-26 09:02:33</sys_updated_on>
         <template><![CDATA[<!-- <pre> {{data|json}}</pre> -->
 <div class="panel panel-{{options.color}}">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
       <fa ng-if="::options.glyph.length" name="::{{options.glyph}}" class="m-r-sm" />
-      <span>${Module} - {{::data.number}} - {{::data.short_description}}</span>
+      <span>${Module} - {{::data.number}} - {{::data.short_description}} </span>
     </h2>
   </div>
   <div class="panel-body">
@@ -221,26 +262,45 @@ var startTime = GlideDateTime().getDate().getValue();
           <span class="col-lg-9" >{{data.duration_resolution}}</span>
         </div>
         &nbsp;
-        <div ng-if="data.support" class="summary">
-          <span class="col-lg-3">${Material} : </span>
+        <div  ng-if="data.support" class="summary">
+          <span class="col-lg-3">${Support} : </span>
           <a href="?id=kb_article&sys_id={{::data.supportlink}}">
-            <span class="col-lg-9">{{data.support}} - {{data.supporttitle}}</span>
+            <span class="col-lg-9">{{data.support}} - {{data.supporttitle}} </span>
           </a>
         </div>
        
         <div ng-show="data.content && data.status >=2" >
           <hr/>
           &nbsp;
-          <div ng-bind-html="data.content" style="overflow-x:auto;">
+          <div ng-bind-html ="data.content" style="overflow-x:auto;">
           </div>
         </div>  
         &nbsp;
-        <div>
+        
+        
+         <ul class="list-group" ng-repeat="task in data.tasks track by task.sys_id">    
+          <!-- 
+           <p>${Notes} :</p> 
+         <p>
+       {{task.description}}
+     </p>
+          
+    <li  class="list-group-item" >
+         <input type="checkbox" ng-click="c.markTaskComplete($event, task)" />  
+
+  
+
+      <div ng-bind-html="task.description" style="overflow-x:auto;"> </div>
+     --> 
+ </ul> 
+        
           <hr/>
           <form>
             <label>${Personal Notes} :</label>              
-            <textarea ng-keypress="c.checkValid()" id="my_notes" type="text" name="notes" ng-model="notes" ng-minlength="3" ng-maxlength="1000" size="1000" class="notes"></textarea>
-          </form>
+            <textarea style="overflow-x:auto;" ng-keypress="c.checkValid()" id="my_notes" type="text" ng-model="notes" name="notes"  ng-minlength="3" class="notes" ></textarea>
+     
+          
+</form>
           <br/>
           &nbsp;
           <div id="save_button" class="btn btn-success m-b" ng-click="c.saveNotes('saveNotes')">${Save Notes}</div>

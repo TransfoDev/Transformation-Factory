@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="12" type="collection">
+    <element extends="task" label="Training Definition" max_length="40" name="x_206907_devo_tf_training_definition" sizeclass="28" type="collection">
         <element label="Approval Comments" max_length="400" name="approval_comments" type="string"/>
         <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Author" max_length="32" name="author" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Capacity" max_length="40" name="capacity" type="integer"/>
@@ -12,7 +12,7 @@
         <element label="Schedule - End" max_length="40" name="schedule_end" type="glide_date_time"/>
         <element label="Schedule - Start" max_length="40" name="schedule_start" type="glide_date_time"/>
         <element label="Summary" max_length="4000" name="summary" type="string"/>
-        <element choice="1" default="E-learning" label="Training Type" max_length="40" name="training_type" type="choice">
+        <element choice="1" default="E-Learning" label="Training Type" max_length="40" name="training_type" type="choice">
             <choice>
                 <element label="E-Learning" value="E-Learning"/>
                 <element label="Hybrid" value="Hybrid"/>

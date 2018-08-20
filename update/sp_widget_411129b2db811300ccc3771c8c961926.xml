@@ -45,7 +45,7 @@
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>copy_tf_module_instances</id>
+        <id>copy-tf-module-instances</id>
         <internal>false</internal>
         <link/>
         <name>Copy TF Module Instances</name>
@@ -99,6 +99,7 @@
 		$sp.getRecordValues(a, z, 'short_description,description,sys_id,training_type,number,site,completion_time,content');
 		$sp.getRecordDisplayValues(a, z, 'state');
 		a.instructor = z.instructor.getDisplayValue();
+		//a.training_type = z.training_type.getDisplayValue();
 	//	a.support = z.support.getDisplayValue();
 	//	a.supportlink = z.support.sys_id.toString();
 	//	a.supporttitle =  z.support.short_description.getDisplayValue();
@@ -106,8 +107,38 @@
 			a.schedule = z.schedule.getDisplayValue();
 		if (z.schedule_end)
 			a.schedule_end = z.schedule_end.getDisplayValue();
-		data.articles.push(a);
+		
+			data.articles.push(a);
 	}
+	
+	
+		var completed = new GlideRecord('x_206907_devo_tf_module_instance');
+completed.addQuery('from_training'  , training);
+completed.addQuery('assigned_to.sys_id', user);
+completed.addQuery('state', "3");
+completed.query();
+if (completed.next())
+{
+var complete = completed.getRowCount()
+
+}
+else {
+	var complete =  "0";
+}
+		
+	var all = new GlideRecord('x_206907_devo_tf_module_instance');
+all.addQuery('from_training'  , training);
+all.addQuery('assigned_to.sys_id', user);
+all.query();
+if (all.next())
+{
+var tous = all.getRowCount()
+//data.result = "Resultat" +complete; 
+}
+	
+data.result = complete +"/" + tous; 
+
+	
 })()
 
 ]]></script>
@@ -116,14 +147,14 @@
         <sys_created_by>anoufel</sys_created_by>
         <sys_created_on>2018-03-28 11:35:14</sys_created_on>
         <sys_id>411129b2db811300ccc3771c8c961926</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>Copy TF Module Instances</sys_name>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sp_widget_411129b2db811300ccc3771c8c961926</sys_update_name>
-        <sys_updated_by>CVIGNERON</sys_updated_by>
-        <sys_updated_on>2018-05-07 07:34:14</sys_updated_on>
+        <sys_updated_by>c.vigneron</sys_updated_by>
+        <sys_updated_on>2018-07-24 14:09:59</sys_updated_on>
         <template><![CDATA[<div class="panel panel-{{options.color}} b">
   <div class="panel-heading"> 
     <h2 class="h4 panel-title">
@@ -144,12 +175,13 @@
         <span class="col-lg-3"></span>
 				<span class="col-lg-9">
  					<div class="progress-bar">
-        	<div class="progress-bar-inner" ng-style="{width: data.percent + '%'}"></div>
-        	</div>
+        	<div class="progress-bar-inner" ng-style="{width: data.percent + '%'}">  </div>
+          	</div>
+          {{data.result}}
          </span>
         &nbsp;
        <div ng-if="data.training_type">
-          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{data.training_type}}</span>
+          <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{data.training_type}}</span> 
         </div>
         <div ng-if="data.schedule">
          <span class="col-lg-3">${Starting}</span><span class="col-lg-9">{{data.schedule}} ${at} {{data.start_time}}</span>
@@ -195,7 +227,7 @@
           <span class="col-lg-3">${Summary} : </span><span class="col-lg-9">{{a.description}}</span>
         </div>
         &nbsp;
-        <div>
+    <!--    <div>
           <span class="col-lg-3">${Training Type} : </span><span class="col-lg-9">{{a.formation_type}}</span>
         </div>
         <div ng-if="a.schedule">
@@ -212,6 +244,25 @@
         </div>
         <div ng-if="a.completion_time">
           <span class="col-lg-3">${Completion Time} : </span><span class="col-lg-9">{{a.completion_time}}</span>
+        </div>
+-->
+        <div ng-if="data.training_type">
+          <span class>${Module Type} : </span><span class>{{a.training_type}}</span>
+        </div>
+        <div ng-if="a.schedule">
+          <span class>${Starting} : </span><span class>{{a.schedule}}</span>
+        </div>
+        <div ng-if="a.schedule_end">
+          <span class>${Ending} : </span><span class>{{a.schedule_end}}</span>
+        </div>
+        <div ng-if="a.instructor">
+          <span class>${Instructor} : </span><span class=>{{a.instructor}}</span>
+        </div>
+        <div ng-if="a.site">
+          <span class>${Site} : </span><span class=>{{a.site}}</span>
+        </div>
+        <div ng-if="a.completion_time">
+          <span class>${Completion Time} : </span><span class>{{a.completion_time}}</span>
         </div>
 
       

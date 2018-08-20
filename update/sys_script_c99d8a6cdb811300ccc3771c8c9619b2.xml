@@ -52,6 +52,8 @@
 		while (userGrp.next()){
 			guestsList.push(userGrp.user.sys_id);
 		}
+		
+				current.number_of_guest = groupTab.length;
 	}
 	//We skip every duplicate from the Array
 // 	var arrayUtil = new ArrayUtil();
@@ -79,7 +81,7 @@
 		testInvitation.query();
 
 		if (testInvitation.hasNext()) {
-			gs.addErrorMessage("This user : " + testedUser.name  + " is already enrolled for this Event : " + current.event.getDisplayValue());
+			//gs.addErrorMessage("This user : " + testedUser.name  + " is already enrolled for this Event : " + current.event.getDisplayValue());
 			continue;
 		}
 
@@ -90,7 +92,7 @@
 // 		gr2.query();
 // 		while(gr2.next()){
 			if (current.event_capacity == 0){
-				gs.addErrorMessage("The user " + testedUser.name +" was not invited to the event : " + gr2.short_description + ". The event is currently at full occupancy.");
+				//gs.addErrorMessage("The user " + testedUser.name +" was not invited to the event : " + gr2.short_description + ". The event is currently at full occupancy.");
 				continue;
 			}
 
@@ -110,7 +112,7 @@
 				var invitation = gr.insert();
 				current.invitation = invitation;
 
-				gs.addInfoMessage("The user " + testedUser.name +" has been invited to the event : " + gr2.short_description + ".");
+				//gs.addInfoMessage("The user " + testedUser.name +" has been invited to the event : " + gr2.short_description + ".");
 			}
 // 		}
 	}
@@ -121,15 +123,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c99d8a6cdb811300ccc3771c8c9619b2</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>TF - Create Invitation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Transformation Factory" source="x_206907_devo_tf">2bd67e33db301300ccc3771c8c961947</sys_package>
         <sys_policy/>
         <sys_scope display_value="Transformation Factory">2bd67e33db301300ccc3771c8c961947</sys_scope>
         <sys_update_name>sys_script_c99d8a6cdb811300ccc3771c8c9619b2</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-04-23 14:53:54</sys_updated_on>
+        <sys_updated_by>ccouble</sys_updated_by>
+        <sys_updated_on>2018-07-31 12:22:06</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

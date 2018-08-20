@@ -4,294 +4,308 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>short_description</element>
             <position>0</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4bd3e3b7dbb01300ccc3771c8c96190b</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>66ecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>from_training</element>
             <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cbd3e3b7dbb01300ccc3771c8c96190b</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>e6ecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>assigned_to</element>
             <position>2</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4fd3e3b7dbb01300ccc3771c8c96190b</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6aecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>instructor</element>
             <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cfd3e3b7dbb01300ccc3771c8c96190b</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eaecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number_of_available_places</element>
             <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>43d3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6eecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>c3d3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eeecaffcdb931300ccc3771c8c96195e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>state</element>
             <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>47d3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>62ecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>training_type</element>
             <position>7</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>c7d3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>e2ecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>site</element>
             <position>8</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4bd3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>66ecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>material</element>
             <position>9</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cbd3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>e6ecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>completion_time</element>
             <position>10</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4fd3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6aecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>11</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cfd3e3b7dbb01300ccc3771c8c96190c</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eaecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
             <position>12</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>43d3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6eecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>start</element>
             <position>13</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>c3d3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eeecaffcdb931300ccc3771c8c96195f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>14</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>47d3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>62ecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>end</element>
             <position>15</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>c7d3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>e2ecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>16</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4bd3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>66ecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
             <position>17</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cbd3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>e6ecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>content</element>
             <position>18</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>4fd3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6aecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>duration_resolution</element>
             <position>19</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>cfd3e3b7dbb01300ccc3771c8c96190d</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eaecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>personal_notes</element>
             <position>20</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 13:24:50</sys_created_on>
-            <sys_id>43d3e3b7dbb01300ccc3771c8c96190e</sys_id>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>6eecaffcdb931300ccc3771c8c961960</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 13:24:50</sys_updated_on>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>work_notes</element>
+            <position>21</position>
+            <sys_created_by>c.vigneron</sys_created_by>
+            <sys_created_on>2018-07-12 12:59:36</sys_created_on>
+            <sys_id>eeecaffcdb931300ccc3771c8c961960</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_206907_devo_tf_module_instance" sys_domain="global" view="Default view">0853eb77dbb01300ccc3771c8c9619fd</sys_ui_section>
+            <sys_updated_by>c.vigneron</sys_updated_by>
+            <sys_updated_on>2018-07-12 12:59:36</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

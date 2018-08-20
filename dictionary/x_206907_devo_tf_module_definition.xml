@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" sizeclass="21" type="collection">
+    <element extends="task" label="Module Definition" max_length="40" name="x_206907_devo_tf_module_definition" sizeclass="52" type="collection">
         <element label="Approval Comments" max_length="4000" name="approval_comments" type="string"/>
         <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Author" max_length="32" name="author" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Completion Time" max_length="40" name="completion_time" type="string"/>
-        <element label="Content" mandatory="true" max_length="4000" name="content" type="html"/>
+        <element label="Content" max_length="4000" name="content" type="html"/>
         <element label="Instructor" max_length="32" name="instructor" reference="sys_user" type="reference"/>
         <element label="Number of Available Places" max_length="40" name="number_of_available_places" type="integer"/>
         <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
         <element label="Schedule" max_length="40" name="schedule" type="glide_date_time"/>
         <element label="Site" max_length="100" name="site" type="string"/>
         <element label="Support" max_length="32" name="support" reference="kb_knowledge" type="reference"/>
-        <element choice="3" default="E-Learning" label="Training type" mandatory="true" max_length="40" name="training_type" type="string">
+        <element choice="3" default="E-Learning" label="Module type" mandatory="true" max_length="40" name="training_type" type="string">
             <choice>
                 <element label="On-Site" sequence="0" value="On-Site"/>
                 <element label="E-Learning" sequence="1" value="E-Learning"/>
